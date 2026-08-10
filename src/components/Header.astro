@@ -1,37 +1,76 @@
 ---
-const tools = [
-  { href: '/invoice-generator', label: 'Invoice' },
-  { href: '/bill-of-sale-generator', label: 'Bill of Sale' },
-  { href: '/quote-generator', label: 'Quote' },
-  { href: '/receipt-generator', label: 'Receipt' },
-  { href: '/rental-agreement-generator', label: 'Rental' },
-  { href: '/social-media-image-resizer', label: 'Image Resizer' },
-  { href: '/color-palette-generator', label: 'Palette' },
-  { href: '/ai-humanizer', label: 'AI Humanizer' },
-  { href: '/ai-paraphraser', label: 'Paraphraser' },
-  { href: '/seo-ranking-checker', label: 'Rank Checker' },
-];
+import { categories } from '../data/tools';
+
+const labels: Record<string, string> = {
+  Document: 'Documents',
+  Image: 'Images',
+  Design: 'Design',
+  AI: 'AI',
+  SEO: 'SEO',
+};
 ---
 
-<header class="border-b border-slate-200 bg-white">
-  <div class="tool-container flex items-center justify-between py-4">
-    <a href="/" class="flex items-center gap-2 text-lg font-bold text-slate-900">
-      <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
+<header class="nav-shell">
+  <div class="tool-container flex h-16 items-center justify-between">
+    <a href="/" class="group flex items-center gap-2.5">
+      <span
+        class="grid h-9 w-9 place-items-center rounded-xl bg-volt-400 text-ink-950 transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-105"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true">
+          <path d="M12 1.8c.7 5.6 2.8 8.7 8.4 9.4-5.6.7-7.7 3.8-8.4 9.4-.7-5.6-2.8-8.7-8.4-9.4 5.6-.7 7.7-3.8 8.4-9.4Z" />
         </svg>
       </span>
-      Slyxup Tools
+      <span class="display text-lg font-bold tracking-tight text-mist-100">
+        slyxup<span class="text-mist-500">/tools</span>
+      </span>
     </a>
 
-    <nav class="hidden items-center gap-1 lg:flex">
-      {tools.slice(0, 6).map((t) => (
-        <a href={t.href} class="rounded-md px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900">
-          {t.label}
+    <nav class="hidden items-center gap-6 lg:flex" aria-label="Categories">
+      <a href="/#tools" class:list={['nav-link font-mono uppercase', Astro.url.pathname === '/' && 'is-active']}>
+        All
+      </a>
+      {categories.map((c) => (
+        <a
+          href={`/#tools?cat=${encodeURIComponent(c)}`}
+          class="nav-link font-mono uppercase"
+        >
+          {labels[c] ?? c}
         </a>
       ))}
     </nav>
 
-    <a href="/" class="btn-primary hidden sm:inline-flex">All Tools</a>
+    <div class="flex items-center gap-2">
+      <a href="/#tools" class="btn-volt hidden !px-4 !py-2 text-xs sm:inline-flex">All tools</a>
+      <button
+        id="menu-btn"
+        type="button"
+        aria-label="Toggle menu"
+        class="grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-mist-300 transition-colors hover:text-mist-100 lg:hidden"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5" aria-hidden="true">
+          <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden border-t border-white/5 lg:hidden">
+    <nav class="tool-container flex flex-col py-3" aria-label="Mobile categories">
+      <a href="/#tools" class="nav-link rounded-lg px-3 py-2.5 font-mono uppercase">All</a>
+      {categories.map((c) => (
+        <a href={`/#tools?cat=${encodeURIComponent(c)}`} class="nav-link rounded-lg px-3 py-2.5 font-mono uppercase">
+          {labels[c] ?? c}
+        </a>
+      ))}
+    </nav>
   </div>
 </header>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+  menu?.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => menu.classList.add('hidden'));
+  });
+</script>

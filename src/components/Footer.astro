@@ -1,39 +1,77 @@
 ---
 import { tools } from '../data/tools';
+
+const documents = tools.filter((t) => t.category === 'Document');
+const rest = tools.filter((t) => t.category !== 'Document');
 ---
 
-<footer class="mt-16 border-t border-slate-200 bg-white">
-  <div class="tool-container grid gap-8 py-10 md:grid-cols-3">
+<footer class="relative mt-24 overflow-hidden border-t border-white/5">
+  <div class="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-[radial-gradient(60%_100%_at_50%_100%,rgba(210,255,63,0.08),transparent)]" aria-hidden="true" />
+
+  <div class="tool-container grid gap-10 border-b border-white/5 py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
     <div>
-      <p class="text-sm font-semibold text-slate-900">Slyxup Tools</p>
-      <p class="mt-2 text-sm text-slate-500">
-        Free online tools for documents, images, design, AI, and SEO. Fast, private, and free forever.
+      <a href="/" class="flex items-center gap-2.5">
+        <span class="grid h-8 w-8 place-items-center rounded-lg bg-volt-400 text-ink-950">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true">
+            <path d="M12 1.8c.7 5.6 2.8 8.7 8.4 9.4-5.6.7-7.7 3.8-8.4 9.4-.7-5.6-2.8-8.7-8.4-9.4 5.6-.7 7.7-3.8 8.4-9.4Z" />
+          </svg>
+        </span>
+        <span class="display text-lg font-bold tracking-tight text-mist-100">
+          slyxup<span class="text-mist-500">/tools</span>
+        </span>
+      </a>
+      <p class="mt-4 max-w-xs text-sm leading-relaxed text-mist-400">
+        Free online tools for documents, images, design, AI, and SEO. Fast, private, and free forever — no signup, no
+        watermark, no catch.
       </p>
+      <div class="mt-5 flex items-center gap-2">
+        <span class="chip">Free forever</span>
+        <span class="chip">No signup</span>
+      </div>
     </div>
+
     <div>
-      <p class="text-sm font-semibold text-slate-900">Tools</p>
-      <ul class="mt-2 space-y-1 text-sm text-slate-500">
-        {tools.slice(0, 8).map((t) => (
+      <p class="mono-label mb-4 text-mist-500">Documents</p>
+      <ul class="space-y-2.5">
+        {documents.map((t) => (
           <li>
-            <a href={`/${t.slug}`} class="hover:text-brand-600">{t.shortTitle}</a>
+            <a href={`/${t.slug}`} class="text-sm text-mist-400 transition-colors hover:text-volt-300">
+              {t.shortTitle}
+            </a>
           </li>
         ))}
       </ul>
     </div>
+
     <div>
-      <p class="text-sm font-semibold text-slate-900">More Tools</p>
-      <ul class="mt-2 space-y-1 text-sm text-slate-500">
-        {tools.slice(8).map((t) => (
+      <p class="mono-label mb-4 text-mist-500">More tools</p>
+      <ul class="space-y-2.5">
+        {rest.map((t) => (
           <li>
-            <a href={`/${t.slug}`} class="hover:text-brand-600">{t.shortTitle}</a>
+            <a href={`/${t.slug}`} class="text-sm text-mist-400 transition-colors hover:text-volt-300">
+              {t.shortTitle}
+            </a>
           </li>
         ))}
+      </ul>
+    </div>
+
+    <div>
+      <p class="mono-label mb-4 text-mist-500">Slyxup</p>
+      <ul class="space-y-2.5 text-sm text-mist-400">
+        <li><a href="/" class="transition-colors hover:text-volt-300">All tools</a></li>
+        <li><a href="/#why" class="transition-colors hover:text-volt-300">Why free</a></li>
+        <li><a href="https://slyxup.in" class="transition-colors hover:text-volt-300">slyxup.in</a></li>
       </ul>
     </div>
   </div>
-  <div class="border-t border-slate-200 py-4">
-    <div class="tool-container text-center text-xs text-slate-400">
-      &copy; {new Date().getFullYear()} Slyxup Tools · tools.slyxup.in
-    </div>
+
+  <div class="tool-container flex flex-col items-center justify-between gap-3 py-6 text-xs text-mist-500 sm:flex-row">
+    <p>&copy; {new Date().getFullYear()} Slyxup Tools · tools.slyxup.in</p>
+    <p class="font-mono uppercase tracking-[0.2em]">Built for the web · free forever</p>
+  </div>
+
+  <div class="relative pb-2">
+    <div class="footer-wordmark" aria-hidden="true">SLYXUP</div>
   </div>
 </footer>

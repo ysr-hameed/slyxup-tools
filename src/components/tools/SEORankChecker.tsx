@@ -116,7 +116,8 @@ export default function SEORankChecker() {
       )}
 
       <p className="text-center text-xs text-slate-400">
-        Checks live Google results. Rankings are an approximation and vary by location and device.
+        Checks live search results (Bing, DuckDuckGo, or Google fallback). Rankings are an approximation and vary by
+        location and device.
       </p>
     </div>
   );

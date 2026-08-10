@@ -9,6 +9,10 @@ interface Props {
 const { tool } = Astro.props;
 const related = tools.filter((t) => t.slug !== tool.slug).slice(0, 4);
 
+const words = tool.title.split(' ');
+const head = words.slice(0, -1).join(' ');
+const tail = words[words.length - 1];
+
 const jsonLd = [
   {
     '@context': 'https://schema.org',
@@ -34,50 +38,99 @@ const jsonLd = [
 ---
 
 <Layout title={`${tool.title} — Free Online Tool`} description={tool.description} slug={tool.slug} jsonLd={jsonLd}>
-  <div class="tool-container">
-    <nav class="mb-4 flex items-center gap-1 text-sm text-slate-500" aria-label="Breadcrumb">
-      <a href="/" class="hover:text-brand-600">Home</a>
-      <span>/</span>
-      <span class="text-slate-700">{tool.shortTitle}</span>
-    </nav>
+  <section class="relative overflow-hidden">
+    <div class="orb left-[-14%] top-[-30%] h-96 w-96 bg-volt-400/10" aria-hidden="true" />
 
-    <div class="mb-2 flex items-center gap-2">
-      <span class="rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-medium text-brand-700">{tool.category}</span>
-      <span class="text-xs text-slate-400">Free · No signup</span>
+    <div class="tool-container relative py-14 sm:py-20">
+      <nav class="mb-8 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-mist-500" aria-label="Breadcrumb" data-reveal>
+        <a href="/" class="transition-colors hover:text-volt-300">Home</a>
+        <span class="text-mist-600">/</span>
+        <span class="text-mist-300">{tool.shortTitle}</span>
+      </nav>
+
+      <div class="flex flex-wrap items-center gap-2" data-reveal style="--reveal-delay:80ms">
+        <span class="chip">{tool.category}</span>
+        <span class="chip">100% free</span>
+        <span class="chip">No signup</span>
+        <span class="chip text-mist-500">{tool.volume}</span>
+      </div>
+
+      <h1
+        class="mt-6 max-w-4xl font-display text-4xl font-semibold leading-[1.02] tracking-[-0.04em] sm:text-6xl"
+        data-reveal
+        style="--reveal-delay:160ms"
+      >
+        {head} <em class="text-volt-300">{tail}</em>
+      </h1>
+
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-mist-400 sm:text-lg" data-reveal style="--reveal-delay:260ms">
+        {tool.description}
+      </p>
     </div>
+  </section>
 
-    <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">{tool.title}</h1>
-    <p class="mt-3 max-w-2xl text-base text-slate-600">{tool.description}</p>
+  <!-- WORKSPACE -->
+  <section class="tool-container scroll-mt-24" data-reveal>
+    <div class="overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-ink-800/80 to-ink-900 shadow-[0_24px_80px_-24px_rgba(0,0,0,0.8)]">
+      <div class="flex items-center justify-between border-b border-white/10 px-4 py-3 sm:px-5">
+        <div class="flex items-center gap-1.5" aria-hidden="true">
+          <span class="h-2.5 w-2.5 rounded-full bg-mist-500/50" />
+          <span class="h-2.5 w-2.5 rounded-full bg-mist-500/50" />
+          <span class="h-2.5 w-2.5 rounded-full bg-volt-400/70" />
+        </div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-mist-500">{tool.slug} · workspace</p>
+        <p class="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-mist-500 sm:block">Runs in your browser</p>
+      </div>
 
-    <div class="mt-8 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6">
-      <slot name="tool" />
+      <div class="rounded-xl bg-white p-4 text-slate-900 sm:p-6">
+        <slot />
+      </div>
     </div>
+  </section>
 
-    <div class="mt-12">
-      <h2 class="text-2xl font-bold text-slate-900">{tool.title} — Frequently Asked Questions</h2>
-      <div class="mt-4 space-y-3">
-        {tool.faqs.map((f) => (
-          <div class="rounded-xl border border-slate-200 bg-white p-4">
-            <h3 class="font-semibold text-slate-900">{f.question}</h3>
-            <p class="mt-1 text-sm text-slate-600">{f.answer}</p>
+  <!-- FAQ -->
+  <section class="tool-container scroll-mt-24 py-20">
+    <div class="mb-8 max-w-2xl" data-reveal>
+      <p class="mono-label">Good to know</p>
+      <h2 class="mt-3 font-display text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
+        {tool.shortTitle} — <em class="text-volt-300">FAQs</em>
+      </h2>
+    </div>
+    <div class="space-y-3">
+      {tool.faqs.map((f, i) => (
+        <div class="glass rounded-2xl p-5" data-reveal style={`--reveal-delay:${i * 90}ms`}>
+          <div class="flex items-start gap-4">
+            <span class="mt-0.5 font-mono text-[11px] tracking-[0.15em] text-volt-400">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <div>
+              <h3 class="font-display text-base font-semibold text-mist-100">{f.question}</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-mist-400">{f.answer}</p>
+            </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
+  </section>
 
-    <div class="mt-12">
-      <h2 class="text-2xl font-bold text-slate-900">More Free Tools</h2>
-      <div class="mt-4 grid gap-4 sm:grid-cols-2">
-        {related.map((t) => (
-          <a
-            href={`/${t.slug}`}
-            class="group rounded-xl border border-slate-200 bg-white p-4 transition-shadow hover:shadow-md"
-          >
-            <p class="font-semibold text-slate-900 group-hover:text-brand-600">{t.shortTitle}</p>
-            <p class="mt-1 line-clamp-2 text-sm text-slate-500">{t.description}</p>
-          </a>
-        ))}
-      </div>
+  <!-- RELATED -->
+  <section class="tool-container scroll-mt-24 pb-8">
+    <div class="mb-8" data-reveal>
+      <p class="mono-label">Keep going</p>
+      <h2 class="mt-3 font-display text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
+        More free <em class="text-volt-300">tools</em>
+      </h2>
     </div>
-  </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {related.map((t, i) => (
+        <a href={`/${t.slug}`} class="tool-card !gap-2 p-5" data-reveal style={`--reveal-delay:${i * 90}ms`}>
+          <p class="font-mono text-[10px] uppercase tracking-[0.18em] text-mist-500">{t.category}</p>
+          <h3 class="font-display text-base font-semibold tracking-tight text-mist-100 transition-colors group-hover:text-volt-300">
+            {t.shortTitle}
+          </h3>
+          <p class="line-clamp-2 text-sm leading-relaxed text-mist-400">{t.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
 </Layout>

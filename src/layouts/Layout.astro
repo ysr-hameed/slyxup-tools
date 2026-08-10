@@ -23,6 +23,7 @@ const canonical = slug ? `https://tools.slyxup.in/${slug}/` : 'https://tools.sly
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#0a0a0d" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -35,15 +36,12 @@ const canonical = slug ? `https://tools.slyxup.in/${slug}/` : 'https://tools.sly
 
     {
       jsonLd.map((data) => (
-        <script
-          is:inline
-          type="application/ld+json"
-          set:html={JSON.stringify(data)}
-        />
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(data)} />
       ))
     }
   </head>
   <body>
+    <div class="grain-overlay" aria-hidden="true" />
     <Header />
     <main>
       <slot />
@@ -51,3 +49,52 @@ const canonical = slug ? `https://tools.slyxup.in/${slug}/` : 'https://tools.sly
     <Footer />
   </body>
 </html>
+
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduceMotion) {
+    import('lenis').then(({ default: Lenis }) => {
+      const lenis = new Lenis({ lerp: 0.08 });
+      const raf = (time: number) => {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      };
+      requestAnimationFrame(raf);
+    });
+  }
+
+  const reveal = (el: Element) => el.classList.add('is-revealed');
+
+  if (typeof IntersectionObserver === 'undefined') {
+    document.querySelectorAll('[data-reveal]').forEach(reveal);
+  } else {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            reveal(entry.target);
+            observer.unobserve(entry.target);
+          }
+        }
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
+    );
+    for (const el of document.querySelectorAll('[data-reveal]')) {
+      observer.observe(el);
+    }
+
+    window.addEventListener(
+      'load',
+      () => {
+        setTimeout(() => {
+          const vh = window.innerHeight;
+          document.querySelectorAll('[data-reveal]:not(.is-revealed)').forEach((el) => {
+            if (el.getBoundingClientRect().top < vh * 0.95) reveal(el);
+          });
+        }, 350);
+      },
+      { once: true },
+    );
+  }
+</script>

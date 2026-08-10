@@ -93,24 +93,85 @@ function parseGoogleResults(html: string): GoogleResult[] {
   return results;
 }
 
+function parseDuckDuckGoResults(html: string): GoogleResult[] {
+  const results: GoogleResult[] = [];
+  const anchorRe = /<a[^>]*class="result__a"[^>]*href="([^"]+)"[^>]*>(.*?)<\/a>/g;
+  let m: RegExpExecArray | null;
+  while ((m = anchorRe.exec(html)) !== null && results.length < 20) {
+    const url = decodeEntities(m[1]);
+    if (!/^https?:\/\//.test(url)) continue;
+    const title = decodeEntities(m[2].replace(/<[^>]+>/g, '')).trim();
+    results.push({ position: results.length + 1, url, title });
+  }
+  return results;
+}
+
+function parseBingRssResults(xml: string): GoogleResult[] {
+  const results: GoogleResult[] = [];
+  const itemRe = /<item>[\s\S]*?<\/item>/g;
+  let m: RegExpExecArray | null;
+  while ((m = itemRe.exec(xml)) !== null && results.length < 20) {
+    const item = m[0];
+    const titleM = item.match(/<title>(.*?)<\/title>/);
+    const linkM = item.match(/<link>(.*?)<\/link>/);
+    const url = linkM ? decodeEntities(linkM[1].trim()) : '';
+    if (!/^https?:\/\//.test(url)) continue;
+    const title = titleM ? decodeEntities(titleM[1].replace(/<[^>]+>/g, '')).trim() : '';
+    results.push({ position: results.length + 1, url, title });
+  }
+  return results;
+}
+
+const SEARCH_PROVIDERS = ['bing', 'duckduckgo', 'google'] as const;
+const SEARCH_UA =
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36';
+
+async function fetchSearchResults(provider: (typeof SEARCH_PROVIDERS)[number], keyword: string): Promise<GoogleResult[]> {
+  const q = encodeURIComponent(keyword);
+  let url: string;
+  if (provider === 'bing') url = `https://www.bing.com/search?q=${q}&format=rss&count=20&setlang=en`;
+  else if (provider === 'duckduckgo') url = `https://html.duckduckgo.com/html/?q=${q}`;
+  else url = `https://www.google.com/search?q=${q}&num=20&hl=en&gbv=1`;
+
+  const res = await fetch(url, {
+    headers: { 'User-Agent': SEARCH_UA, 'Accept-Language': 'en-US,en;q=0.9' },
+  });
+  if (!res.ok) throw new Error(`${provider} status ${res.status}`);
+  const body = await res.text();
+
+  let results: GoogleResult[];
+  if (provider === 'bing') results = parseBingRssResults(body);
+  else if (provider === 'duckduckgo') results = parseDuckDuckGoResults(body);
+  else results = parseGoogleResults(body);
+
+  if (results.length === 0) throw new Error(`${provider} returned no results`);
+  return results;
+}
+
 app.post('/api/seo/rank', async (c) => {
   const body = await c.req.json().catch(() => null);
   const keyword = (body?.keyword ?? '').toString().trim();
   const domain = (body?.domain ?? '').toString().trim();
   if (!keyword || !domain) return c.json({ error: 'keyword and domain are required' }, 400);
 
-  const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(keyword)}&num=20&hl=en`;
-  const res = await fetch(searchUrl, {
-    headers: {
-      'User-Agent':
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36',
-      'Accept-Language': 'en-US,en;q=0.9',
-    },
-  });
-  if (!res.ok) return c.json({ error: 'Search provider unavailable' }, 502);
+  let results: GoogleResult[] = [];
+  let providerUsed = '';
+  const errors: string[] = [];
+  for (let attempt = 0; attempt < 3 && results.length === 0; attempt++) {
+    for (const provider of SEARCH_PROVIDERS) {
+      try {
+        results = await fetchSearchResults(provider, keyword);
+        providerUsed = provider;
+        break;
+      } catch (err) {
+        const msg = `${provider}: ${(err as Error).message}`;
+        console.warn(`[seo/rank] attempt ${attempt + 1} ${msg}`);
+        errors.push(msg);
+      }
+    }
+  }
+  if (results.length === 0) return c.json({ error: 'Search provider unavailable', details: errors }, 502);
 
-  const html = await res.text();
-  const results = parseGoogleResults(html);
   const domainNorm = domain.replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '').toLowerCase();
 
   let rank: number | null = null;
@@ -123,7 +184,7 @@ app.post('/api/seo/rank', async (c) => {
     }
   });
 
-  return c.json({ keyword, domain: domainNorm, rank, matchedUrl, totalResults: results.length });
+  return c.json({ keyword, domain: domainNorm, rank, matchedUrl, totalResults: results.length, provider: providerUsed });
 });
 
 app.post('/api/ai/rewrite', async (c) => {

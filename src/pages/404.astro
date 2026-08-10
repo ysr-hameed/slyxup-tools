@@ -1,27 +1,26 @@
 ---
-const year = new Date().getFullYear();
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Free Online Tools — tools.slyxup.in</title>
-  </head>
-  <body>
-    <h1>tools.slyxup.in — Free Online Tools</h1>
-    <ul>
-      <li><a href="/invoice-generator/">Free Invoice Generator</a></li>
-      <li><a href="/bill-of-sale-generator/">Free Bill of Sale Generator</a></li>
-      <li><a href="/quote-generator/">Free Quote &amp; Proposal Generator</a></li>
-      <li><a href="/receipt-generator/">Free Receipt Generator</a></li>
-      <li><a href="/rental-agreement-generator/">Free Rental Agreement Generator</a></li>
-      <li><a href="/social-media-image-resizer/">Free Social Media Image Resizer</a></li>
-      <li><a href="/color-palette-generator/">Free Color Palette Generator</a></li>
-      <li><a href="/ai-humanizer/">Free AI Text Humanizer</a></li>
-      <li><a href="/ai-paraphraser/">Free AI Paraphraser</a></li>
-      <li><a href="/seo-ranking-checker/">Free SEO Ranking Checker</a></li>
-    </ul>
-    <p>© {year} Slyxup Tools</p>
-  </body>
-</html>
+<Layout
+  title="Page Not Found — Slyxup Tools"
+  description="This page could not be found. Head back to the Slyxup Tools toolbox."
+>
+  <section class="relative overflow-hidden">
+    <div class="hero-grid absolute inset-0" aria-hidden="true" />
+    <div class="orb left-[10%] top-[-30%] h-80 w-80 bg-volt-400/15" aria-hidden="true" />
+
+    <div class="tool-container relative py-28 text-center sm:py-36">
+      <p class="mono-label" data-reveal>Error 404</p>
+      <p class="mt-6 font-display text-8xl font-semibold tracking-[-0.05em] sm:text-[10rem]" data-reveal style="--reveal-delay:100ms">
+        4<em class="text-volt-300">0</em>4
+      </p>
+      <p class="mx-auto mt-4 max-w-xl text-lg text-mist-400" data-reveal style="--reveal-delay:200ms">
+        This page wandered off. It happens — even to the best tools.
+      </p>
+      <div class="mt-8 flex justify-center" data-reveal style="--reveal-delay:300ms">
+        <a href="/" class="btn-volt">Back to the toolbox</a>
+      </div>
+    </div>
+  </section>
+</Layout>
