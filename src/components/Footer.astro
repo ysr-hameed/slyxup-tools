@@ -1,0 +1,39 @@
+---
+import { tools } from '../data/tools';
+---
+
+<footer class="mt-16 border-t border-slate-200 bg-white">
+  <div class="tool-container grid gap-8 py-10 md:grid-cols-3">
+    <div>
+      <p class="text-sm font-semibold text-slate-900">Slyxup Tools</p>
+      <p class="mt-2 text-sm text-slate-500">
+        Free online tools for documents, images, design, AI, and SEO. Fast, private, and free forever.
+      </p>
+    </div>
+    <div>
+      <p class="text-sm font-semibold text-slate-900">Tools</p>
+      <ul class="mt-2 space-y-1 text-sm text-slate-500">
+        {tools.slice(0, 8).map((t) => (
+          <li>
+            <a href={`/${t.slug}`} class="hover:text-brand-600">{t.shortTitle}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <p class="text-sm font-semibold text-slate-900">More Tools</p>
+      <ul class="mt-2 space-y-1 text-sm text-slate-500">
+        {tools.slice(8).map((t) => (
+          <li>
+            <a href={`/${t.slug}`} class="hover:text-brand-600">{t.shortTitle}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-slate-200 py-4">
+    <div class="tool-container text-center text-xs text-slate-400">
+      &copy; {new Date().getFullYear()} Slyxup Tools · tools.slyxup.in
+    </div>
+  </div>
+</footer>

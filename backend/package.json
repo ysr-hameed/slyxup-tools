@@ -1,0 +1,20 @@
+{
+  "name": "tools-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.13.0",
+  "scripts": {
+    "dev": "wrangler dev --port 8790 --inspector-port 0",
+    "deploy": "wrangler deploy --minify",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "hono": "^4.7.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250701.0",
+    "typescript": "^5.8.0",
+    "wrangler": "^4.0.0"
+  }
+}

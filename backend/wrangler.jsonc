@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tools-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-07-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "routes": [
+    {
+      "pattern": "api-tools.slyxup.online",
+      "custom_domain": true
+    }
+  ],
+  "vars": {
+    "ROUTER_BASE_URL": "https://router.slyxup.online/v1",
+    "ROUTER_MODEL": "oc/deepseek-v4-flash-free",
+    "ENVIRONMENT": "production"
+  }
+}

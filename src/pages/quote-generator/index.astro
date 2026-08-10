@@ -1,0 +1,22 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import { getTool } from '../../data/tools';
+import DocumentEditor from '../../components/tools/DocumentEditor.tsx';
+
+const tool = getTool('quote-generator')!;
+const config = {
+  heading: 'Quote / Proposal',
+  accent: [14, 165, 233] as [number, number, number],
+  tableHeaders: ['Service Description', 'Qty', 'Rate', 'Amount'],
+  showTax: true,
+  showDiscount: true,
+  showClient: true,
+  showDueDate: true,
+  clientLabel: 'Client',
+  downloadName: 'quote',
+};
+---
+
+<ToolLayout tool={tool}>
+  <DocumentEditor client:load config={config} />
+</ToolLayout>

@@ -1,0 +1,11 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import { getTool } from '../../data/tools';
+import SocialMediaResizer from '../../components/tools/SocialMediaResizer.tsx';
+
+const tool = getTool('social-media-image-resizer')!;
+---
+
+<ToolLayout tool={tool}>
+  <SocialMediaResizer client:load />
+</ToolLayout>

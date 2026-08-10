@@ -1,0 +1,11 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import { getTool } from '../../data/tools';
+import SEORankChecker from '../../components/tools/SEORankChecker.tsx';
+
+const tool = getTool('seo-ranking-checker')!;
+---
+
+<ToolLayout tool={tool}>
+  <SEORankChecker client:load />
+</ToolLayout>
