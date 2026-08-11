@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Search, Loader2, TrendingUp, TrendingDown, Minus } from 'lucide-react';
 
-export default function SEORankChecker() {
+export default function SEORankChecker(_props: { key?: string }) {
   const [keyword, setKeyword] = useState('');
   const [domain, setDomain] = useState('');
   const [loading, setLoading] = useState(false);

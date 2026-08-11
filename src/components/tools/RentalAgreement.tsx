@@ -4,9 +4,10 @@ import { Download } from 'lucide-react';
 
 interface Props {
   accent?: [number, number, number];
+  key?: string;
 }
 
-export default function RentalAgreement({ accent = [15, 118, 110] as [number, number, number] }: Props) {
+export default function RentalAgreement({ accent = [15, 118, 110] as [number, number, number], key: _key }: Props & { key?: string }) {
   const [landlord, setLandlord] = useState({ name: '', email: '', phone: '', address: '' });
   const [tenant, setTenant] = useState({ name: '', email: '', phone: '' });
   const [property, setProperty] = useState({ address: '', type: 'Apartment', monthlyRent: 0, securityDeposit: 0 });

@@ -18,6 +18,7 @@ export interface DocumentEditorConfig {
 
 interface Props {
   config: DocumentEditorConfig;
+  key?: string;
 }
 
 export default function DocumentEditor({ config }: Props) {

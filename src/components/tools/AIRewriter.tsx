@@ -6,6 +6,7 @@ interface Props {
   heading: string;
   placeholder: string;
   hint: string;
+  key?: string;
 }
 
 export default function AIRewriter({ mode, heading, placeholder, hint }: Props) {

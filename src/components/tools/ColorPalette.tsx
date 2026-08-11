@@ -92,7 +92,7 @@ function paletteFor(hex: string, harmony: string): string[] {
   return out.slice(0, HARMONIES.find((x) => x.id === harmony)?.count ?? 5);
 }
 
-export default function ColorPalette() {
+export default function ColorPalette(_props: { key?: string }) {
   const [base, setBase] = useState('#6366F1');
   const [harmony, setHarmony] = useState('analogous');
   const [copied, setCopied] = useState<string | null>(null);

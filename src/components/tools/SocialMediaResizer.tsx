@@ -25,7 +25,7 @@ const FILL_OPTIONS = [
   { id: 'stretch', label: 'Stretch' },
 ];
 
-export default function SocialMediaResizer() {
+export default function SocialMediaResizer(_props: { key?: string }) {
   const fileRef = useRef<HTMLInputElement>(null);
   const [imgSrc, setImgSrc] = useState<string | null>(null);
   const [imgEl, setImgEl] = useState<HTMLImageElement | null>(null);
