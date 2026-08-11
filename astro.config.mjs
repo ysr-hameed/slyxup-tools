@@ -8,7 +8,10 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://tools.slyxup.in',
-  integrations: [react(), sitemap()],
+  integrations: [react(), sitemap({
+    changefreq: 'weekly',
+    priority: 0.8,
+  })],
 
   vite: {
     plugins: [tailwindcss()],

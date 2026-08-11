@@ -34,6 +34,14 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: f.answer },
     })),
   },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tools.slyxup.in/' },
+      { '@type': 'ListItem', position: 2, name: tool.shortTitle, item: `https://tools.slyxup.in/${tool.slug}/` },
+    ],
+  },
 ];
 ---
 
@@ -42,28 +50,28 @@ const jsonLd = [
     <div class="orb left-[-14%] top-[-30%] h-96 w-96 bg-volt-400/10" aria-hidden="true" />
 
     <div class="tool-container relative py-14 sm:py-20">
-      <nav class="mb-8 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-mist-500" aria-label="Breadcrumb" data-reveal>
+      <nav class="mb-8 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em]" style="color: var(--chrome-text-dim);" aria-label="Breadcrumb" data-reveal>
         <a href="/" class="transition-colors hover:text-volt-300">Home</a>
-        <span class="text-mist-600">/</span>
-        <span class="text-mist-300">{tool.shortTitle}</span>
+        <span style="color: var(--chrome-text-dim);">/</span>
+        <span style="color: var(--chrome-text);">{tool.shortTitle}</span>
       </nav>
 
       <div class="flex flex-wrap items-center gap-2" data-reveal style="--reveal-delay:80ms">
         <span class="chip">{tool.category}</span>
         <span class="chip">100% free</span>
         <span class="chip">No signup</span>
-        <span class="chip text-mist-500">{tool.volume}</span>
+        <span class="chip">{tool.volume}</span>
       </div>
 
       <h1
         class="mt-6 max-w-4xl font-display text-4xl font-semibold leading-[1.02] tracking-[-0.04em] sm:text-6xl"
         data-reveal
-        style="--reveal-delay:160ms"
+        style="--reveal-delay:160ms; color: var(--chrome-text);"
       >
         {head} <em class="text-volt-300">{tail}</em>
       </h1>
 
-      <p class="mt-5 max-w-2xl text-base leading-relaxed text-mist-400 sm:text-lg" data-reveal style="--reveal-delay:260ms">
+      <p class="mt-5 max-w-2xl text-base leading-relaxed sm:text-lg" data-reveal style="--reveal-delay:260ms; color: var(--chrome-text-muted);">
         {tool.description}
       </p>
     </div>
@@ -74,12 +82,12 @@ const jsonLd = [
     <div class="overflow-hidden rounded-2xl shadow-[0_24px_80px_-24px_rgba(0,0,0,0.8)]" style="border: 1px solid var(--chrome-border); background: linear-gradient(to bottom, var(--chrome-surface), var(--chrome-bg));">
       <div class="flex items-center justify-between px-4 py-3 sm:px-5" style="border-bottom: 1px solid var(--chrome-border);">
         <div class="flex items-center gap-1.5" aria-hidden="true">
-          <span class="h-2.5 w-2.5 rounded-full bg-mist-500/50" />
-          <span class="h-2.5 w-2.5 rounded-full bg-mist-500/50" />
-          <span class="h-2.5 w-2.5 rounded-full bg-volt-400/70" />
+          <span class="h-2.5 w-2.5 rounded-full" style="background: var(--chrome-text-dim);" />
+          <span class="h-2.5 w-2.5 rounded-full" style="background: var(--chrome-text-dim);" />
+          <span class="h-2.5 w-2.5 rounded-full" style="background: var(--color-volt-400);" />
         </div>
-        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-mist-500">{tool.slug} · workspace</p>
-        <p class="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-mist-500 sm:block">Runs in your browser</p>
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em]" style="color: var(--chrome-text-dim);">{tool.slug} · workspace</p>
+        <p class="hidden font-mono text-[10px] uppercase tracking-[0.2em] sm:block" style="color: var(--chrome-text-dim);">Runs in your browser</p>
       </div>
 
       <div class="rounded-xl p-4 sm:p-6" style="background-color: var(--ws-bg); color: var(--ws-text);">
@@ -139,8 +147,8 @@ const jsonLd = [
               {String(i + 1).padStart(2, '0')}
             </span>
             <div>
-              <h3 class="font-display text-base font-semibold text-mist-100">{f.question}</h3>
-              <p class="mt-1.5 text-sm leading-relaxed text-mist-400">{f.answer}</p>
+              <h3 class="font-display text-base font-semibold" style="color: var(--chrome-text);">{f.question}</h3>
+              <p class="mt-1.5 text-sm leading-relaxed" style="color: var(--chrome-text-muted);">{f.answer}</p>
             </div>
           </div>
         </div>
@@ -159,11 +167,11 @@ const jsonLd = [
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {related.map((t, i) => (
         <a href={`/${t.slug}`} class="tool-card !gap-2 p-5" data-reveal style={`--reveal-delay:${i * 90}ms`}>
-          <p class="font-mono text-[10px] uppercase tracking-[0.18em] text-mist-500">{t.category}</p>
-          <h3 class="font-display text-base font-semibold tracking-tight text-mist-100 transition-colors group-hover:text-volt-300">
+          <p class="font-mono text-[10px] uppercase tracking-[0.18em" style="color: var(--chrome-text-dim);">{t.category}</p>
+          <h3 class="font-display text-base font-semibold tracking-tight transition-colors group-hover:text-volt-300" style="color: var(--chrome-text);">
             {t.shortTitle}
           </h3>
-          <p class="line-clamp-2 text-sm leading-relaxed text-mist-400">{t.description}</p>
+          <p class="line-clamp-2 text-sm leading-relaxed" style="color: var(--chrome-text-muted);">{t.description}</p>
         </a>
       ))}
     </div>

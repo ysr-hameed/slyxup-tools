@@ -68,14 +68,15 @@ export default function ToolExplorer() {
             key={c}
             type="button"
             onClick={() => select(c)}
-            className={`group inline-flex items-center gap-2 rounded-full border px-4 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.15em] transition-all duration-300 ${
+            className="group inline-flex items-center gap-2 rounded-full border px-4 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.15em] transition-all duration-300"
+            style={
               filter === c
-                ? 'border-volt-400 bg-volt-400 text-ink-950'
-                : 'border-white/10 bg-white/[0.03] text-mist-400 hover:border-white/25 hover:text-mist-100'
-            }`}
+                ? { borderColor: 'var(--color-volt-400)', backgroundColor: 'var(--color-volt-400)', color: '#0a0a0d' }
+                : { borderColor: 'var(--chrome-border-strong)', backgroundColor: 'var(--chrome-surface)', color: 'var(--chrome-text-muted)' }
+            }
           >
             {c}
-            <span className={`text-[10px] ${filter === c ? 'text-ink-950/60' : 'text-mist-600'}`}>
+            <span className="text-[10px]" style={{ color: filter === c ? 'rgba(10,10,13,0.6)' : 'var(--chrome-text-dim)' }}>
               {String(counts(c)).padStart(2, '0')}
             </span>
           </button>
@@ -96,22 +97,22 @@ export default function ToolExplorer() {
                 <span className={`icon-chip bg-gradient-to-br ${GRADIENTS[t.category] ?? GRADIENTS.Document}`}>
                   <Icon className="h-5 w-5 text-ink-950" strokeWidth={2.2} />
                 </span>
-                <span className="font-mono text-[11px] tracking-[0.15em] text-mist-600">
+                <span className="font-mono text-[11px] tracking-[0.15em]" style={{ color: 'var(--chrome-text-dim)' }}>
                   {String(i + 1).padStart(2, '0')}
                 </span>
               </div>
 
               <div>
-                <p className="mono-label !text-[10px] text-mist-500">{t.category}</p>
-                <h3 className="mt-1.5 font-display text-lg font-semibold tracking-tight text-mist-100 transition-colors group-hover:text-volt-300">
+                <p className="mono-label !text-[10px]" style={{ color: 'var(--chrome-text-dim)' }}>{t.category}</p>
+                <h3 className="mt-1.5 font-display text-lg font-semibold tracking-tight transition-colors group-hover:text-volt-300" style={{ color: 'var(--chrome-text)' }}>
                   {t.shortTitle}
                 </h3>
-                <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-mist-400">{t.description}</p>
+                <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed" style={{ color: 'var(--chrome-text-muted)' }}>{t.description}</p>
               </div>
 
-              <div className="mt-auto flex items-center justify-between border-t border-white/5 pt-4">
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-mist-500">Free · No signup</span>
-                <span className="inline-flex items-center gap-1 text-xs font-medium text-mist-300 transition-all duration-300 group-hover:gap-2 group-hover:text-volt-300">
+              <div className="mt-auto flex items-center justify-between pt-4" style={{ borderTop: '1px solid var(--chrome-border)' }}>
+                <span className="font-mono text-[10px] uppercase tracking-[0.18em]" style={{ color: 'var(--chrome-text-dim)' }}>Free · No signup</span>
+                <span className="inline-flex items-center gap-1 text-xs font-medium transition-all duration-300 group-hover:gap-2 group-hover:text-volt-300" style={{ color: 'var(--chrome-text-muted)' }}>
                   Open tool <ArrowUpRight className="h-3.5 w-3.5" />
                 </span>
               </div>

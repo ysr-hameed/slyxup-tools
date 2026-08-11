@@ -95,7 +95,8 @@ export default function SocialMediaResizer() {
     <div className="grid gap-6 lg:grid-cols-2">
       <div className="space-y-4">
         <div
-          className="flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 p-8 text-center hover:border-brand-400 hover:bg-brand-50/50"
+          className="flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed p-8 text-center transition-colors"
+          style={{ borderColor: 'var(--ws-border-strong)', backgroundColor: 'var(--ws-bg-soft)' }}
           onClick={() => fileRef.current?.click()}
           onDragOver={(e) => e.preventDefault()}
           onDrop={(e) => {
@@ -103,9 +104,9 @@ export default function SocialMediaResizer() {
             onFile(e.dataTransfer.files?.[0]);
           }}
         >
-          <Upload className="mb-2 h-8 w-8 text-slate-400" />
-          <p className="text-sm font-medium text-slate-700">Drop an image here or click to upload</p>
-          <p className="mt-1 text-xs text-slate-400">PNG, JPG, WEBP — processed entirely in your browser</p>
+          <Upload className="mb-2 h-8 w-8" style={{ color: 'var(--ws-text-dim)' }} />
+          <p className="text-sm font-medium" style={{ color: 'var(--ws-text)' }}>Drop an image here or click to upload</p>
+          <p className="mt-1 text-xs" style={{ color: 'var(--ws-text-dim)' }}>PNG, JPG, WEBP — processed entirely in your browser</p>
           <input
             ref={fileRef}
             type="file"
@@ -116,11 +117,12 @@ export default function SocialMediaResizer() {
         </div>
 
         {imgSrc && (
-          <div className="flex items-center gap-3 rounded-lg border border-slate-200 p-2">
-            <img src={imgSrc} alt="Upload preview" className="h-12 w-12 rounded object-cover" />
-            <p className="flex-1 truncate text-sm text-slate-600">{fileName}</p>
+          <div className="flex items-center gap-3 rounded-lg p-2" style={{ border: '1px solid var(--ws-border)', backgroundColor: 'var(--ws-bg)' }}>
+            <img src={imgSrc} alt={`${fileName} upload preview`} className="h-12 w-12 rounded object-cover" />
+            <p className="flex-1 truncate text-sm" style={{ color: 'var(--ws-text-muted)' }}>{fileName}</p>
             <button
-              className="rounded-md p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-700"
+              className="rounded-md p-2 transition-colors hover:opacity-80"
+              style={{ color: 'var(--ws-text-dim)' }}
               onClick={() => {
                 setImgSrc(null);
                 setImgEl(null);
@@ -150,7 +152,12 @@ export default function SocialMediaResizer() {
             {FILL_OPTIONS.map((f) => (
               <button
                 key={f.id}
-                className={`rounded-lg border px-3 py-2 text-sm ${fill === f.id ? 'border-brand-500 bg-brand-50 font-medium text-brand-700' : 'border-slate-300 bg-white text-slate-600 hover:bg-slate-50'}`}
+                className="rounded-lg border px-3 py-2 text-sm font-medium transition-colors"
+                style={
+                  fill === f.id
+                    ? { borderColor: 'var(--color-volt-400)', backgroundColor: 'rgba(210,255,63,0.12)', color: 'var(--ws-text)' }
+                    : { borderColor: 'var(--ws-border)', backgroundColor: 'var(--ws-bg)', color: 'var(--ws-text-muted)' }
+                }
                 onClick={() => setFill(f.id)}
               >
                 {f.label}
@@ -167,18 +174,19 @@ export default function SocialMediaResizer() {
         <button className="btn-primary w-full" onClick={download} disabled={!imgEl}>
           <Download className="h-4 w-4" /> Download {preset.width}x{preset.height} Image
         </button>
-        {!imgEl && <p className="text-xs text-slate-400">Upload an image to resize.</p>}
+        {!imgEl && <p className="text-xs" style={{ color: 'var(--ws-text-dim)' }}>Upload an image to resize.</p>}
       </div>
 
-      <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-        <p className="mb-3 text-sm font-semibold text-slate-500">Preview</p>
+      <div className="rounded-xl p-4" style={{ border: '1px solid var(--ws-border)', backgroundColor: 'var(--ws-bg-soft)' }}>
+        <p className="mb-3 text-sm font-semibold" style={{ color: 'var(--ws-text-dim)' }}>Preview</p>
         {imgEl ? (
-          <div className="flex items-center justify-center overflow-hidden rounded-lg bg-white shadow-sm" style={{ height: '320px' }}>
+          <div className="flex items-center justify-center overflow-hidden rounded-lg shadow-sm" style={{ height: '320px', backgroundColor: 'var(--ws-bg)', boxShadow: 'var(--ws-shadow)' }}>
             <div style={{ width: preset.width / 4, height: preset.height / 4, overflow: 'hidden', position: 'relative' }}>
               <img
                 src={imgSrc!}
-                alt="Resized preview"
+                alt={`Resized preview at ${preset.width}x${preset.height}`}
                 className="max-w-none"
+                loading="lazy"
                 style={{
                   width: fill === 'contain' ? 'auto' : '100%',
                   height: fill === 'contain' ? '100%' : '100%',
@@ -190,11 +198,11 @@ export default function SocialMediaResizer() {
             </div>
           </div>
         ) : (
-          <div className="flex h-72 items-center justify-center rounded-lg bg-white text-sm text-slate-400 shadow-sm">
+          <div className="flex h-72 items-center justify-center rounded-lg text-sm shadow-sm" style={{ backgroundColor: 'var(--ws-bg)', color: 'var(--ws-text-dim)', boxShadow: 'var(--ws-shadow)' }}>
             Upload an image to see the preview
           </div>
         )}
-        <p className="mt-3 text-center text-xs text-slate-400">
+        <p className="mt-3 text-center text-xs" style={{ color: 'var(--ws-text-dim)' }}>
           {imgEl && `${imgEl.naturalWidth}x${imgEl.naturalHeight} → ${preset.width}x${preset.height}`} · Your images never leave your browser.
         </p>
       </div>

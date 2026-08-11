@@ -209,7 +209,8 @@ em {
 }
 
 @utility mono-label {
-  @apply font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-mist-500;
+  @apply font-mono text-[11px] font-medium uppercase tracking-[0.2em];
+  color: var(--chrome-text-dim);
 }
 
 /* ---------- workspace primitives ---------- */
