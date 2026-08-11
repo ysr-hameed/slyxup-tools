@@ -84,6 +84,12 @@ html[data-theme="dark"] {
   --chrome-text-dim: #64748b;
   --chrome-grid: rgba(15,23,42,0.04);
   --chrome-card-grain: rgba(15,23,42,0.02);
+  /* light-mode accent: deep volt green with strong contrast on white */
+  --color-volt-300: #6b8d0a;
+  --color-volt-400: #4d6b08;
+  --color-volt-500: #3d5806;
+  --color-volt-600: #2f4404;
+  --color-volt-700: #1f2f02;
   /* flip design tokens for light chrome */
   --color-mist-100: #0f172a;
   --color-mist-200: #1e293b;
