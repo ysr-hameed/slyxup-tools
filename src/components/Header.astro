@@ -40,6 +40,17 @@ const labels: Record<string, string> = {
     </nav>
 
     <div class="flex items-center gap-2">
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="Toggle theme"
+        class="grid h-9 w-9 place-items-center rounded-lg text-mist-300 transition-colors hover:text-mist-100"
+        style="border: 1px solid var(--chrome-border-strong)"
+      >
+        <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-4.5 w-4.5" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+        </svg>
+      </button>
       <a href="/#tools" class="btn-volt hidden !px-4 !py-2 text-xs sm:inline-flex">All tools</a>
       <button
         id="menu-btn"
@@ -54,7 +65,7 @@ const labels: Record<string, string> = {
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden border-t border-white/5 lg:hidden">
+  <div id="mobile-menu" class="hidden lg:hidden" style="border-top: 1px solid var(--chrome-border);">
     <nav class="tool-container flex flex-col py-3" aria-label="Mobile categories">
       <a href="/#tools" class="nav-link rounded-lg px-3 py-2.5 font-mono uppercase">All</a>
       {categories.map((c) => (
@@ -72,5 +83,18 @@ const labels: Record<string, string> = {
   btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
   menu?.querySelectorAll('a').forEach((a) => {
     a.addEventListener('click', () => menu.classList.add('hidden'));
+  });
+
+  const toggle = document.getElementById('theme-toggle');
+  const root = document.documentElement;
+  function currentTheme() {
+    return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  }
+  function applyTheme(next: string) {
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  }
+  toggle?.addEventListener('click', () => {
+    applyTheme(currentTheme() === 'dark' ? 'light' : 'dark');
   });
 </script>

@@ -90,8 +90,8 @@ export default function DocumentEditor({ config }: Props) {
         </div>
 
         {config.showClient && (
-          <div className="rounded-lg border border-slate-200 p-3">
-            <p className="mb-2 text-sm font-semibold text-slate-700">{config.clientLabel ?? 'Client'}</p>
+          <div className="rounded-lg p-3" style={{ border: '1px solid var(--ws-border)' }}>
+            <p className="mb-2 text-sm font-semibold" style={{ color: 'var(--ws-text-muted)' }}>{config.clientLabel ?? 'Client'}</p>
             <div className="grid gap-3 sm:grid-cols-2">
               <input className="input" value={client.name} onChange={(e) => setClient({ ...client, name: e.target.value })} placeholder="Client name" />
               <input className="input" value={client.email ?? ''} onChange={(e) => setClient({ ...client, email: e.target.value })} placeholder="Client email" />
@@ -117,12 +117,12 @@ export default function DocumentEditor({ config }: Props) {
           )}
         </div>
 
-        <div className="rounded-lg border border-slate-200">
-          <div className="border-b border-slate-200 bg-slate-50 px-3 py-2 text-sm font-semibold text-slate-700">
+        <div className="rounded-lg" style={{ border: '1px solid var(--ws-border)' }}>
+          <div className="px-3 py-2 text-sm font-semibold" style={{ color: 'var(--ws-text-muted)', borderBottom: '1px solid var(--ws-border)', backgroundColor: 'var(--ws-bg-soft)' }}>
             Line items
           </div>
           {items.map((it, i) => (
-            <div key={i} className="flex items-end gap-2 border-b border-slate-100 p-3 last:border-0">
+            <div key={i} className="flex items-end gap-2 p-3" style={{ borderBottom: i < items.length - 1 ? '1px solid var(--ws-border)' : 'none' }}>
               <div className="flex-1">
                 <label className="label">Description</label>
                 <input className="input" value={it.description} onChange={(e) => updateItem(i, { description: e.target.value })} placeholder="Product or service" />
@@ -137,7 +137,7 @@ export default function DocumentEditor({ config }: Props) {
                   <input className="input" type="number" min="0" value={it.rate} onChange={(e) => updateItem(i, { rate: Number(e.target.value) })} />
                 </div>
               )}
-              <button className="mb-0.5 rounded-md p-2 text-slate-400 hover:bg-red-50 hover:text-red-600" onClick={() => removeItem(i)} aria-label="Remove item">
+              <button className="mb-0.5 rounded-md p-2 transition-colors hover:opacity-80" style={{ color: 'var(--ws-text-dim)' }} onClick={() => removeItem(i)} aria-label="Remove item" onMouseEnter={(e) => (e.currentTarget.style.color = '#ef4444')} onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--ws-text-dim)')}>
                 <Trash2 className="h-4 w-4" />
               </button>
             </div>
@@ -174,44 +174,44 @@ export default function DocumentEditor({ config }: Props) {
         {hasError && <p className="text-xs text-red-600">Add your business name and item descriptions to download.</p>}
       </div>
 
-      <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-        <p className="mb-3 text-sm font-semibold text-slate-500">Preview</p>
-        <div className="rounded-lg bg-white p-5 shadow-sm">
-          <div className="flex items-start justify-between border-b border-slate-200 pb-3">
+      <div className="rounded-xl p-4" style={{ border: '1px solid var(--ws-border)', backgroundColor: 'var(--ws-bg-soft)' }}>
+        <p className="mb-3 text-sm font-semibold" style={{ color: 'var(--ws-text-dim)' }}>Preview</p>
+        <div className="rounded-lg p-5" style={{ backgroundColor: 'var(--ws-bg)', boxShadow: 'var(--ws-shadow)' }}>
+          <div className="flex items-start justify-between pb-3" style={{ borderBottom: '1px solid var(--ws-border)' }}>
             <div>
-              <p className="text-xl font-bold text-slate-900">{config.heading}</p>
-              <p className="text-xs text-slate-500">#{docNumber}</p>
+              <p className="text-xl font-bold" style={{ color: 'var(--ws-text)' }}>{config.heading}</p>
+              <p className="text-xs" style={{ color: 'var(--ws-text-dim)' }}>#{docNumber}</p>
             </div>
-            <div className="text-right text-xs text-slate-500">
+            <div className="text-right text-xs" style={{ color: 'var(--ws-text-dim)' }}>
               <p>{displayDate}</p>
               {config.showDueDate && dueDate && <p>Due: {new Date(dueDate + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>}
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4 py-3 text-xs">
             <div>
-              <p className="font-semibold text-slate-700">From</p>
-              <p className="text-slate-500">{business.name || '—'}</p>
-              {business.email && <p className="text-slate-500">{business.email}</p>}
+              <p className="font-semibold" style={{ color: 'var(--ws-text-muted)' }}>From</p>
+              <p style={{ color: 'var(--ws-text-dim)' }}>{business.name || '—'}</p>
+              {business.email && <p style={{ color: 'var(--ws-text-dim)' }}>{business.email}</p>}
             </div>
             {config.showClient && (
               <div>
-                <p className="font-semibold text-slate-700">{config.clientLabel ?? 'Client'}</p>
-                <p className="text-slate-500">{client.name || '—'}</p>
-                {client.email && <p className="text-slate-500">{client.email}</p>}
+                <p className="font-semibold" style={{ color: 'var(--ws-text-muted)' }}>{config.clientLabel ?? 'Client'}</p>
+                <p style={{ color: 'var(--ws-text-dim)' }}>{client.name || '—'}</p>
+                {client.email && <p style={{ color: 'var(--ws-text-dim)' }}>{client.email}</p>}
               </div>
             )}
           </div>
           <table className="w-full text-xs">
             <thead>
-              <tr className="border-b border-slate-200 text-left text-slate-500">
-                <th className="py-1.5">Item</th>
+              <tr style={{ borderBottom: '1px solid var(--ws-border)', color: 'var(--ws-text-dim)' }}>
+                <th className="py-1.5 text-left">Item</th>
                 {config.showRate !== false && <th className="py-1.5 text-right">Rate</th>}
                 <th className="py-1.5 text-right">Amount</th>
               </tr>
             </thead>
-            <tbody className="text-slate-600">
+            <tbody style={{ color: 'var(--ws-text-muted)' }}>
               {items.map((it, i) => (
-                <tr key={i} className="border-b border-slate-100">
+                <tr key={i} style={{ borderBottom: '1px solid var(--ws-border)' }}>
                   <td className="py-1.5">{it.description || '—'}</td>
                   {config.showRate !== false && <td className="py-1.5 text-right">${it.rate}</td>}
                   <td className="py-1.5 text-right">${(it.quantity * it.rate).toFixed(2)}</td>
@@ -219,15 +219,15 @@ export default function DocumentEditor({ config }: Props) {
               ))}
             </tbody>
           </table>
-          <div className="mt-3 space-y-1 text-right text-xs text-slate-600">
+          <div className="mt-3 space-y-1 text-right text-xs" style={{ color: 'var(--ws-text-muted)' }}>
             <p>Subtotal: ${items.reduce((s, it) => s + it.quantity * it.rate, 0).toFixed(2)}</p>
             {config.showTax && taxRate > 0 && <p>Tax ({taxRate}%): ${(items.reduce((s, it) => s + it.quantity * it.rate, 0) * taxRate / 100).toFixed(2)}</p>}
-            <p className="text-sm font-bold text-slate-900">
+            <p className="text-sm font-bold" style={{ color: 'var(--ws-text)' }}>
               Total: ${(items.reduce((s, it) => s + it.quantity * it.rate, 0) * (1 + (config.showTax ? taxRate : 0) / 100) * (1 - (config.showDiscount ? discount : 0) / 100)).toFixed(2)}
             </p>
           </div>
         </div>
-        <p className="mt-3 text-center text-xs text-slate-400">Your data stays in your browser. Nothing is uploaded.</p>
+        <p className="mt-3 text-center text-xs" style={{ color: 'var(--ws-text-dim)' }}>Your data stays in your browser. Nothing is uploaded.</p>
       </div>
     </div>
   );

@@ -217,6 +217,7 @@ app.post('/api/ai/rewrite', async (c) => {
       temperature: 0.8,
       top_p: 0.95,
       max_tokens: 2048,
+      stream: false,
       enable_thinking: false,
     }),
   });

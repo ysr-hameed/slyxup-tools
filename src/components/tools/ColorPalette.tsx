@@ -117,7 +117,7 @@ export default function ColorPalette() {
   return (
     <div className="space-y-5">
       <div className="flex flex-wrap items-center gap-3">
-        <div className="flex items-center gap-2 rounded-lg border border-slate-300 bg-white p-1.5">
+        <div className="flex items-center gap-2 rounded-lg p-1.5" style={{ border: '1px solid var(--ws-input-border)', backgroundColor: 'var(--ws-input-bg)' }}>
           <input
             type="color"
             value={base}
@@ -141,7 +141,12 @@ export default function ColorPalette() {
           {HARMONIES.map((h) => (
             <button
               key={h.id}
-              className={`rounded-full px-3 py-1.5 text-xs font-medium ${harmony === h.id ? 'bg-brand-600 text-white' : 'bg-white text-slate-600 ring-1 ring-slate-300 hover:bg-slate-100'}`}
+              className="rounded-full px-3 py-1.5 text-xs font-medium"
+              style={{
+                backgroundColor: harmony === h.id ? 'var(--color-volt-400)' : 'var(--ws-bg)',
+                color: harmony === h.id ? 'var(--ink-950, #0a0a0d)' : 'var(--ws-text-muted)',
+                border: harmony === h.id ? '1px solid transparent' : '1px solid var(--ws-border)',
+              }}
               onClick={() => setHarmony(h.id)}
             >
               {h.label}
@@ -154,7 +159,8 @@ export default function ColorPalette() {
         {palette.map((hex) => (
           <div
             key={hex}
-            className="cursor-pointer overflow-hidden rounded-xl border border-slate-200 bg-white transition-transform hover:-translate-y-0.5 hover:shadow-md"
+            className="cursor-pointer overflow-hidden rounded-xl transition-transform hover:-translate-y-0.5 hover:shadow-md"
+            style={{ border: '1px solid var(--ws-border)', backgroundColor: 'var(--ws-bg)' }}
             onClick={() => copy(hex)}
             role="button"
             tabIndex={0}
@@ -167,19 +173,19 @@ export default function ColorPalette() {
             </div>
             <div className="flex items-center justify-between p-3">
               <div>
-                <p className="font-mono text-sm text-slate-800">{hex}</p>
-                <p className="text-xs text-slate-500">
+                <p className="font-mono text-sm" style={{ color: 'var(--ws-text)' }}>{hex}</p>
+                <p className="text-xs" style={{ color: 'var(--ws-text-dim)' }}>
                   RGB {parseInt(hex.slice(1, 3), 16)}, {parseInt(hex.slice(3, 5), 16)}, {parseInt(hex.slice(5, 7), 16)}
                 </p>
               </div>
-              {copied === hex ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4 text-slate-400" />}
+              {copied === hex ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" style={{ color: 'var(--ws-text-dim)' }} />}
             </div>
           </div>
         ))}
       </div>
 
-      <div className="rounded-lg border border-slate-200 p-3">
-        <p className="mb-2 text-sm font-semibold text-slate-700">Text on this palette</p>
+      <div className="rounded-lg p-3" style={{ border: '1px solid var(--ws-border)' }}>
+        <p className="mb-2 text-sm font-semibold" style={{ color: 'var(--ws-text-muted)' }}>Text on this palette</p>
         <div className="flex flex-wrap gap-2">
           {palette.slice(0, 3).map((hex) => (
             <span key={hex} className="rounded-md px-3 py-1.5 text-sm" style={{ backgroundColor: hex, color: contrastHex(hex) }}>
@@ -189,7 +195,7 @@ export default function ColorPalette() {
         </div>
       </div>
 
-      <p className="text-center text-xs text-slate-400">Click any swatch to copy its HEX code. Everything runs in your browser.</p>
+      <p className="text-center text-xs" style={{ color: 'var(--ws-text-dim)' }}>Click any swatch to copy its HEX code. Everything runs in your browser.</p>
     </div>
   );
 }

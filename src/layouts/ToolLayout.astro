@@ -71,8 +71,8 @@ const jsonLd = [
 
   <!-- WORKSPACE -->
   <section class="tool-container scroll-mt-24" data-reveal>
-    <div class="overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-ink-800/80 to-ink-900 shadow-[0_24px_80px_-24px_rgba(0,0,0,0.8)]">
-      <div class="flex items-center justify-between border-b border-white/10 px-4 py-3 sm:px-5">
+    <div class="overflow-hidden rounded-2xl shadow-[0_24px_80px_-24px_rgba(0,0,0,0.8)]" style="border: 1px solid var(--chrome-border); background: linear-gradient(to bottom, var(--chrome-surface), var(--chrome-bg));">
+      <div class="flex items-center justify-between px-4 py-3 sm:px-5" style="border-bottom: 1px solid var(--chrome-border);">
         <div class="flex items-center gap-1.5" aria-hidden="true">
           <span class="h-2.5 w-2.5 rounded-full bg-mist-500/50" />
           <span class="h-2.5 w-2.5 rounded-full bg-mist-500/50" />
@@ -82,8 +82,8 @@ const jsonLd = [
         <p class="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-mist-500 sm:block">Runs in your browser</p>
       </div>
 
-      <div class="rounded-xl bg-white p-4 text-slate-900 sm:p-6">
-        <slot />
+      <div class="rounded-xl p-4 sm:p-6" style="background-color: var(--ws-bg); color: var(--ws-text);">
+         <slot />
       </div>
     </div>
   </section>

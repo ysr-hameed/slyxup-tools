@@ -28,7 +28,13 @@ export default function AIRewriter({ mode, heading, placeholder, hint }: Props) 
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text, mode }),
       });
-      const data = await res.json() as { content?: string; error?: string };
+      const raw = await res.text();
+      let data: { content?: string; error?: string } = {};
+      try {
+        data = raw ? JSON.parse(raw) : {};
+      } catch {
+        throw new Error(raw.slice(0, 120) || 'Invalid response from server');
+      }
       if (!res.ok) throw new Error(data.error ?? 'Something went wrong');
       if (!data.content) throw new Error('Empty response');
       setOutput(data.content);
@@ -62,7 +68,7 @@ export default function AIRewriter({ mode, heading, placeholder, hint }: Props) 
         <div>
           <div className="mb-1 flex items-center justify-between">
             <label className="label mb-0">Your text</label>
-            <button className="text-xs text-brand-600 hover:underline" onClick={fillSample} type="button">
+            <button className="text-xs font-medium hover:underline" style={{ color: 'var(--color-volt-400)' }} onClick={fillSample} type="button">
               Use sample
             </button>
           </div>
@@ -72,28 +78,33 @@ export default function AIRewriter({ mode, heading, placeholder, hint }: Props) 
             onChange={(e) => setInput(e.target.value)}
             placeholder={placeholder}
           />
-          <p className="mt-1 text-right text-xs text-slate-400">{input.length}/8000 chars</p>
+          <p className="mt-1 text-right text-xs" style={{ color: 'var(--ws-text-dim)' }}>{input.length}/8000 chars</p>
         </div>
 
         <div>
           <label className="label">Result</label>
           <div className="relative">
             <textarea
-              className="input min-h-64 resize-y bg-slate-50 font-normal"
+              className="input min-h-64 resize-y font-normal"
+              style={{ backgroundColor: 'var(--ws-bg-soft)' }}
               value={output}
               readOnly
               placeholder={loading ? 'Rewriting...' : hint}
             />
             {output && (
-              <button className="absolute right-2 top-2 rounded-md bg-white p-1.5 text-slate-500 shadow ring-1 ring-slate-200 hover:text-slate-800" onClick={copy} aria-label="Copy result">
-                {copied ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
+              <button className="absolute right-2 top-2 rounded-md p-1.5 shadow" style={{ backgroundColor: 'var(--ws-bg)', color: 'var(--ws-text-muted)', border: '1px solid var(--ws-border)' }} onClick={copy} aria-label="Copy result">
+                {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
               </button>
             )}
           </div>
         </div>
       </div>
 
-      {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>}
+      {error && (
+        <p className="rounded-lg px-3 py-2 text-sm" style={{ backgroundColor: 'rgba(239,68,68,0.1)', color: '#f87171' }}>
+          {error}
+        </p>
+      )}
 
       <div className="flex flex-wrap items-center gap-3">
         <label className="label mb-0">Tone / length</label>
@@ -108,7 +119,7 @@ export default function AIRewriter({ mode, heading, placeholder, hint }: Props) 
         </button>
       </div>
 
-      <p className="text-center text-xs text-slate-400">Your text is sent to an AI model to be rewritten. We do not store your content.</p>
+      <p className="text-center text-xs" style={{ color: 'var(--ws-text-dim)' }}>Your text is sent to an AI model to be rewritten. We do not store your content.</p>
     </div>
   );
 }

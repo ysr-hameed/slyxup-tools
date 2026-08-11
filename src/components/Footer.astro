@@ -5,10 +5,10 @@ const documents = tools.filter((t) => t.category === 'Document');
 const rest = tools.filter((t) => t.category !== 'Document');
 ---
 
-<footer class="relative mt-24 overflow-hidden border-t border-white/5">
+<footer class="relative mt-24 overflow-hidden" style="border-top: 1px solid var(--chrome-border);">
   <div class="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-[radial-gradient(60%_100%_at_50%_100%,rgba(210,255,63,0.08),transparent)]" aria-hidden="true" />
 
-  <div class="tool-container grid gap-10 border-b border-white/5 py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+  <div class="tool-container grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr]" style="border-bottom: 1px solid var(--chrome-border);">
     <div>
       <a href="/" class="flex items-center gap-2.5">
         <span class="grid h-8 w-8 place-items-center rounded-lg bg-volt-400 text-ink-950">

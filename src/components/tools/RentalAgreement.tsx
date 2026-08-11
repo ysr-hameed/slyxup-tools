@@ -133,8 +133,8 @@ export default function RentalAgreement({ accent = [15, 118, 110] as [number, nu
   return (
     <div className="grid gap-6 lg:grid-cols-2">
       <div className="space-y-4">
-        <div className="rounded-lg border border-slate-200 p-3">
-          <p className="mb-2 text-sm font-semibold text-slate-700">Landlord</p>
+        <div className="rounded-lg p-3" style={{ border: '1px solid var(--ws-border)' }}>
+          <p className="mb-2 text-sm font-semibold" style={{ color: 'var(--ws-text-muted)' }}>Landlord</p>
           <div className="grid gap-3 sm:grid-cols-2">
             <input className={input} value={landlord.name} onChange={(e) => setLandlord({ ...landlord, name: e.target.value })} placeholder="Landlord name *" />
             <input className={input} value={landlord.phone ?? ''} onChange={(e) => setLandlord({ ...landlord, phone: e.target.value })} placeholder="Phone" />
@@ -143,8 +143,8 @@ export default function RentalAgreement({ accent = [15, 118, 110] as [number, nu
           </div>
         </div>
 
-        <div className="rounded-lg border border-slate-200 p-3">
-          <p className="mb-2 text-sm font-semibold text-slate-700">Tenant</p>
+        <div className="rounded-lg p-3" style={{ border: '1px solid var(--ws-border)' }}>
+          <p className="mb-2 text-sm font-semibold" style={{ color: 'var(--ws-text-muted)' }}>Tenant</p>
           <div className="grid gap-3 sm:grid-cols-2">
             <input className={input} value={tenant.name} onChange={(e) => setTenant({ ...tenant, name: e.target.value })} placeholder="Tenant name *" />
             <input className={input} value={tenant.phone ?? ''} onChange={(e) => setTenant({ ...tenant, phone: e.target.value })} placeholder="Phone" />
@@ -152,8 +152,8 @@ export default function RentalAgreement({ accent = [15, 118, 110] as [number, nu
           </div>
         </div>
 
-        <div className="rounded-lg border border-slate-200 p-3">
-          <p className="mb-2 text-sm font-semibold text-slate-700">Property</p>
+        <div className="rounded-lg p-3" style={{ border: '1px solid var(--ws-border)' }}>
+          <p className="mb-2 text-sm font-semibold" style={{ color: 'var(--ws-text-muted)' }}>Property</p>
           <div className="grid gap-3 sm:grid-cols-2">
             <input className={`${input} sm:col-span-2`} value={property.address} onChange={(e) => setProperty({ ...property, address: e.target.value })} placeholder="Property address *" />
             <select className={input} value={property.type} onChange={(e) => setProperty({ ...property, type: e.target.value })}>
@@ -198,14 +198,14 @@ export default function RentalAgreement({ accent = [15, 118, 110] as [number, nu
         <button className="btn-primary w-full" onClick={download} disabled={hasError}>
           <Download className="h-4 w-4" /> Download PDF Agreement
         </button>
-        {hasError && <p className="text-xs text-red-600">Add landlord, tenant, and property address to download.</p>}
+        {hasError && <p className="text-xs" style={{ color: '#f87171' }}>Add landlord, tenant, and property address to download.</p>}
       </div>
 
-      <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-        <p className="mb-3 text-sm font-semibold text-slate-500">Preview</p>
-        <div className="rounded-lg bg-white p-5 text-xs text-slate-600 shadow-sm">
-          <p className="text-lg font-bold text-slate-900">Residential Rental Agreement</p>
-          <p className="text-slate-400">Date: {signedDate}</p>
+      <div className="rounded-xl p-4" style={{ border: '1px solid var(--ws-border)', backgroundColor: 'var(--ws-bg-soft)' }}>
+        <p className="mb-3 text-sm font-semibold" style={{ color: 'var(--ws-text-dim)' }}>Preview</p>
+        <div className="rounded-lg p-5 text-xs shadow-sm" style={{ backgroundColor: 'var(--ws-bg)', color: 'var(--ws-text-muted)', boxShadow: 'var(--ws-shadow)' }}>
+          <p className="text-lg font-bold" style={{ color: 'var(--ws-text)' }}>Residential Rental Agreement</p>
+          <p style={{ color: 'var(--ws-text-dim)' }}>Date: {signedDate}</p>
           <div className="mt-3 space-y-2">
             <p><span className="font-semibold">Landlord:</span> {landlord.name || '—'}</p>
             <p><span className="font-semibold">Tenant:</span> {tenant.name || '—'}</p>
@@ -213,7 +213,7 @@ export default function RentalAgreement({ accent = [15, 118, 110] as [number, nu
             <p><span className="font-semibold">Term:</span> {duration.termMonths} month(s)</p>
             <p><span className="font-semibold">Rent:</span> ${property.monthlyRent.toFixed(2)}/month</p>
             {property.securityDeposit > 0 && <p><span className="font-semibold">Deposit:</span> ${property.securityDeposit.toFixed(2)}</p>}
-            <p className="border-t border-slate-100 pt-2 text-slate-400">This template is a general guide, not legal advice.</p>
+            <p className="pt-2" style={{ borderTop: '1px solid var(--ws-border)', color: 'var(--ws-text-dim)' }}>This template is a general guide, not legal advice.</p>
           </div>
         </div>
       </div>
