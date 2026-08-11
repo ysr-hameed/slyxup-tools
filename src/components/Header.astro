@@ -14,10 +14,21 @@ const labels: Record<string, string> = {
   <div class="tool-container flex h-16 items-center justify-between">
     <a href="/" class="group flex items-center gap-2.5">
       <span
-        class="grid h-9 w-9 place-items-center rounded-xl bg-volt-400 text-ink-950 transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-105"
+        class="grid h-9 w-9 place-items-center rounded-xl transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-105"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true">
-          <path d="M12 1.8c.7 5.6 2.8 8.7 8.4 9.4-5.6.7-7.7 3.8-8.4 9.4-.7-5.6-2.8-8.7-8.4-9.4 5.6-.7 7.7-3.8 8.4-9.4Z" />
+        <svg viewBox="0 0 512 512" fill="none" class="h-6 w-6" aria-hidden="true">
+          <defs>
+            <linearGradient id="ths" x1="105" y1="415" x2="405" y2="85" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#08736F"/>
+              <stop offset=".38" stop-color="#08AFA7"/>
+              <stop offset=".72" stop-color="#25D8CE"/>
+              <stop offset="1" stop-color="#7AFFF7"/>
+            </linearGradient>
+          </defs>
+          <path d="M368 91C329 68 274 64 220 77 165 90 124 121 111 160 96 202 112 239 151 266 170 279 194 291 218 303 234 311 243 320 241 331 239 343 225 348 210 343 191 337 174 327 157 318L113 370c19 15 38 28 60 38 46 22 100 18 132-11 32-28 37-70 15-103-16-25-42-43-73-59L201 211c-16-9-23-18-19-29 5-15 22-25 42-27 34-4 67 5 97 27l47-91Z" fill="url(#ths)"/>
+          <path d="M368 91c-33-19-74-25-113-19-47 6-86 24-114 51-20 20-29 43-30 65-2 32 15 58 46 79 19 12 41 22 62 34L247 235l-46-24c-16-9-23-18-19-29 5-15 22-25 42-27 34-4 67 5 97 27Z" fill="#07958F"/>
+          <path d="M368 91L321 182c14 11 26 21 35 32 9-17 17-35 23-54 6-23 3-49-11-69Z" fill="#21D2C8"/>
+          <path d="M247 235c29 15 53 32 70 56 23 32 18 74-13 104-32 31-85 35-131 13-22-10-41-23-60-38l44-52c17 9 34 19 53 25 15 5 29 0 31-12 2-11-9-20-29-25-19-10-41-22-63-36Z" fill="#076E6A"/>
         </svg>
       </span>
       <span class="display text-lg font-bold tracking-tight text-mist-100">

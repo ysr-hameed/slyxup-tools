@@ -1,11 +1,232 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <rect width="128" height="128" rx="28" fill="#0a0a0d"/>
-  <rect width="128" height="128" rx="28" fill="url(#g)"/>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 512 512"
+  width="512"
+  height="512"
+  fill="none"
+>
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#d2ff3f" stop-opacity="0.95"/>
-      <stop offset="1" stop-color="#bcf229" stop-opacity="0.95"/>
+    <linearGradient
+      id="snakeTeal"
+      x1="105"
+      y1="415"
+      x2="405"
+      y2="85"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#08736F"/>
+      <stop offset="0.38" stop-color="#08AFA7"/>
+      <stop offset="0.72" stop-color="#25D8CE"/>
+      <stop offset="1" stop-color="#7AFFF7"/>
     </linearGradient>
+
+    <linearGradient
+      id="snakeTop"
+      x1="120"
+      y1="105"
+      x2="370"
+      y2="270"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#07958F"/>
+      <stop offset="0.52" stop-color="#16C7BE"/>
+      <stop offset="1" stop-color="#64F4EB"/>
+    </linearGradient>
+
+    <linearGradient
+      id="snakeBottom"
+      x1="125"
+      y1="400"
+      x2="340"
+      y2="245"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#076E6A"/>
+      <stop offset="0.5" stop-color="#09AFA6"/>
+      <stop offset="1" stop-color="#3BE1D8"/>
+    </linearGradient>
+
+    <filter
+      id="shadow"
+      x="-30%"
+      y="-30%"
+      width="160%"
+      height="160%"
+    >
+      <feDropShadow
+        dx="0"
+        dy="11"
+        stdDeviation="14"
+        flood-color="#00BDB3"
+        flood-opacity="0.16"
+      />
+    </filter>
   </defs>
-  <path fill="#0a0a0d" d="M64 18c4 28 16 40 44 44-28 4-40 16-44 44-4-28-16-40-44-44 28-4 40-16 44-44Z"/>
+
+  <!-- MAIN S / SNAKE BODY -->
+  <path
+    d="
+      M368 91
+
+      C329 68 274 64 220 77
+      C165 90 124 121 111 160
+      C96 202 112 239 151 266
+      C170 279 194 291 218 303
+
+      C234 311 243 320 241 331
+      C239 343 225 348 210 343
+
+      C191 337 174 327 157 318
+
+      L113 370
+
+      C132 385 151 398 173 408
+      C219 430 273 426 305 397
+      C337 369 342 327 320 294
+      C304 269 278 251 247 235
+
+      L201 211
+
+      C185 202 178 193 182 182
+      C187 167 204 157 224 155
+
+      C258 151 291 160 321 182
+
+      L368 91
+      Z
+    "
+    fill="url(#snakeTeal)"
+    filter="url(#shadow)"
+  />
+
+  <!-- SNAKE HEAD / UPPER PLANE -->
+  <path
+    d="
+      M368 91
+
+      C335 72 294 66 255 72
+      C208 78 169 96 141 123
+      C121 143 112 166 111 188
+      C109 220 126 246 157 267
+
+      C176 279 198 289 219 301
+
+      L247 235
+      L201 211
+
+      C185 202 178 193 182 182
+
+      C187 167 204 157 224 155
+
+      C258 151 291 160 321 182
+
+      Z
+    "
+    fill="url(#snakeTop)"
+  />
+
+  <!-- SHARP SNAKE HEAD TIP -->
+  <path
+    d="
+      M368 91
+      L321 182
+      C335 193 347 203 356 214
+      C365 197 373 179 379 160
+      C385 137 382 111 368 91
+      Z
+    "
+    fill="#21D2C8"
+  />
+
+  <!-- LOWER BODY -->
+  <path
+    d="
+      M247 235
+
+      C276 250 300 267 317 291
+      C340 323 335 365 304 395
+
+      C272 426 219 430 173 408
+
+      C151 398 132 385 113 370
+
+      L157 318
+
+      C174 327 191 337 210 343
+
+      C225 348 239 343 241 331
+
+      C243 320 234 311 218 303
+
+      C199 293 177 281 157 267
+
+      Z
+    "
+    fill="url(#snakeBottom)"
+  />
+
+  <!-- INNER SNAKE-LIKE SCALE / INTERLOCK -->
+  <path
+    d="
+      M201 211
+      C218 220 237 230 254 238
+      C281 251 302 267 316 286
+
+      L291 311
+
+      C278 294 259 280 239 270
+      L198 249
+      C188 244 181 239 176 234
+
+      Z
+    "
+    fill="#078F88"
+    opacity="0.92"
+  />
+
+  <!-- CENTRAL FOLD -->
+  <path
+    d="
+      M254 238
+      C276 249 297 264 311 280
+      L291 300
+      C276 285 260 275 241 266
+      Z
+    "
+    fill="#45E8DF"
+    opacity="0.9"
+  />
+
+  <!-- TAPERED TAIL ACCENT -->
+  <path
+    d="
+      M157 318
+      L113 370
+      C126 380 139 388 153 395
+      L177 356
+      Z
+    "
+    fill="#086E6A"
+    opacity="0.65"
+  />
+
+  <!-- HEAD HIGHLIGHT -->
+  <path
+    d="
+      M368 91
+      L350 127
+    "
+    stroke="#D9FFFC"
+    stroke-width="6"
+    stroke-linecap="round"
+    opacity="0.72"
+  />
+
+  <!-- SMALL HEAD TIP -->
+  <circle
+    cx="368"
+    cy="91"
+    r="6"
+    fill="#E8FFFD"
+  />
 </svg>
