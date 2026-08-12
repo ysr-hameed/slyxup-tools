@@ -123,38 +123,6 @@ export const tools: ToolDef[] = [
     ],
   },
   {
-    slug: 'quote-generator',
-    title: 'Free Quote & Proposal Generator',
-    shortTitle: 'Quote Generator',
-    description:
-      'Create professional quote or proposal PDFs online. Add your services, pricing and terms then download and send to clients. Free forever, no signup.',
-    keywords: ['quote generator', 'proposal generator', 'free quote template', 'make a quote online'],
-    category: 'Document',
-    difficulty: 'Medium',
-    volume: '5K/mo',
-    faqs: [
-      { question: 'What is the difference between a quote and a proposal?', answer: 'A quote states a fixed price for defined work. A proposal adds scope, timeline, methodology, and terms to persuade a client to choose you. Use a quote for straightforward jobs and a proposal for complex projects.' },
-      { question: 'Can I customize the quote with my branding?', answer: 'Yes. Add your business name, logo, colors, and contact details. The generated PDF reflects your branding so it looks professional and consistent.' },
-      { question: 'Can I save quotes and edit them later?', answer: 'The tool works in your browser. You can keep the tab open and edit before downloading. For re-use, save the PDF and recreate a new version when needed.' },
-      { question: 'Is this suitable for freelance work?', answer: 'Absolutely. Freelancers use this daily to send clear, itemized quotes to clients for design, development, writing, consulting, and other services.' },
-    ],
-    content: [
-      {
-        heading: 'Why sending a professional quote wins you more work',
-        paragraphs: [
-          'A well-written quote does more than state a price — it shows the client you understand the scope, you are organized, and you are serious about delivering. Many freelancers and small businesses still send quotes as plain text emails or messy Word documents. That costs them jobs to competitors who present their pricing clearly.',
-          'This generator helps you produce a clean, itemized PDF quote in minutes. Each service or product gets its own line with quantity, rate, and total. Tax and discount fields are built in. The result is a document that answers every question a client might have before they even ask it.',
-        ],
-        tips: [
-          'Always include a validity period (for example "Valid for 30 days").',
-          'Break work into phases with separate line items so clients can see what they are paying for.',
-          'Add a short scope summary at the top to avoid misunderstandings later.',
-          'Include your payment terms: due date, accepted methods, and late fees.',
-        ],
-      },
-    ],
-  },
-  {
     slug: 'receipt-generator',
     title: 'Free Receipt Generator',
     shortTitle: 'Receipt Generator',

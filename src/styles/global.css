@@ -303,7 +303,7 @@ em {
 /* ---------- chrome (dark) primitives ---------- */
 
 @utility btn-volt {
-  @apply btn relative overflow-hidden bg-volt-400 font-medium text-ink-950 hover:bg-volt-300 active:scale-[0.98];
+  @apply btn relative overflow-hidden bg-volt-400 font-medium text-white hover:bg-volt-300 active:scale-[0.98];
   box-shadow: 0 0 0 1px rgba(210, 255, 63, 0.4), 0 8px 32px -8px rgba(210, 255, 63, 0.4);
 }
 

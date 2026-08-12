@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import {
   ReceiptText,
   ScrollText,
-  Quote,
   Receipt,
   FileSignature,
   Image,
@@ -18,7 +17,6 @@ import { tools, categories } from '../../data/tools';
 const ICONS: Record<string, LucideIcon> = {
   'invoice-generator': ReceiptText,
   'bill-of-sale-generator': ScrollText,
-  'quote-generator': Quote,
   'receipt-generator': Receipt,
   'rental-agreement-generator': FileSignature,
   'social-media-image-resizer': Image,
