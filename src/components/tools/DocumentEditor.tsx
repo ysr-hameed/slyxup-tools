@@ -123,24 +123,28 @@ export default function DocumentEditor({ config }: Props) {
             Line items
           </div>
           {items.map((it, i) => (
-            <div key={i} className="flex items-end gap-2 p-3" style={{ borderBottom: i < items.length - 1 ? '1px solid var(--ws-border)' : 'none' }}>
-              <div className="flex-1">
+            <div key={i} className="flex flex-col items-stretch gap-3 p-3 sm:items-end sm:gap-2" style={{ borderBottom: i < items.length - 1 ? '1px solid var(--ws-border)' : 'none' }}>
+              <div className="min-w-0">
                 <label className="label">Description</label>
                 <input className="input" value={it.description} onChange={(e) => updateItem(i, { description: e.target.value })} placeholder="Product or service" />
               </div>
-              <div className="w-20">
-                <label className="label">Qty</label>
-                <input className="input" type="number" min="0" value={it.quantity} onChange={(e) => updateItem(i, { quantity: Number(e.target.value) })} />
-              </div>
-              {config.showRate !== false && (
-                <div className="w-28">
-                  <label className="label">Rate ($)</label>
-                  <input className="input" type="number" min="0" value={it.rate} onChange={(e) => updateItem(i, { rate: Number(e.target.value) })} />
+              <div className="flex items-end gap-2">
+                <div className="grid min-w-0 flex-1 grid-cols-2 gap-2 sm:flex-none sm:gap-0">
+                  <div className="sm:w-20">
+                    <label className="label">Qty</label>
+                    <input className="input" type="number" min="0" value={it.quantity} onChange={(e) => updateItem(i, { quantity: Number(e.target.value) })} />
+                  </div>
+                  {config.showRate !== false && (
+                    <div className="sm:w-28">
+                      <label className="label">Rate ($)</label>
+                      <input className="input" type="number" min="0" value={it.rate} onChange={(e) => updateItem(i, { rate: Number(e.target.value) })} />
+                    </div>
+                  )}
                 </div>
-              )}
-              <button className="mb-0.5 rounded-md p-2 transition-colors hover:opacity-80" style={{ color: 'var(--ws-text-dim)' }} onClick={() => removeItem(i)} aria-label="Remove item" onMouseEnter={(e) => (e.currentTarget.style.color = '#ef4444')} onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--ws-text-dim)')}>
-                <Trash2 className="h-4 w-4" />
-              </button>
+                <button className="mb-0.5 rounded-md p-2 transition-colors hover:opacity-80" style={{ color: 'var(--ws-text-dim)' }} onClick={() => removeItem(i)} aria-label="Remove item" onMouseEnter={(e) => (e.currentTarget.style.color = '#ef4444')} onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--ws-text-dim)')}>
+                  <Trash2 className="h-4 w-4" />
+                </button>
+              </div>
             </div>
           ))}
           <div className="p-3">

@@ -7,7 +7,10 @@ interface Props {
 }
 
 const { tool } = Astro.props;
-const related = tools.filter((t) => t.slug !== tool.slug).slice(0, 4);
+const related = [
+  ...tools.filter((t) => t.slug !== tool.slug && t.category === tool.category),
+  ...tools.filter((t) => t.slug !== tool.slug && t.category !== tool.category),
+].slice(0, 4);
 
 const words = tool.title.split(' ');
 const head = words.slice(0, -1).join(' ');
