@@ -1,0 +1,16 @@
+{
+  "name": "Slyxup Tools",
+  "short_name": "Slyxup Tools",
+  "description": "Free online tools — fast and privacy-first.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
