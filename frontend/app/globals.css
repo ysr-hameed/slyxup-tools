@@ -82,6 +82,21 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  --logo-teal-0: #08736F;
+  --logo-teal-38: #08AFA7;
+  --logo-teal-72: #25D8CE;
+  --logo-teal-100: #7AFFF7;
+  --logo-top-0: #07958F;
+  --logo-top-52: #16C7BE;
+  --logo-top-100: #64F4EB;
+  --logo-bottom-0: #076E6A;
+  --logo-bottom-50: #09AFA6;
+  --logo-bottom-100: #3BE1D8;
+  --logo-tip: #21D2C8;
+  --logo-inner: #078F88;
+  --logo-accent: #45E8DF;
+  --logo-tail: #086E6A;
 }
 
 .dark {
@@ -116,6 +131,21 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  --logo-teal-0: #08736F;
+  --logo-teal-38: #08AFA7;
+  --logo-teal-72: #25D8CE;
+  --logo-teal-100: #7AFFF7;
+  --logo-top-0: #07958F;
+  --logo-top-52: #16C7BE;
+  --logo-top-100: #64F4EB;
+  --logo-bottom-0: #076E6A;
+  --logo-bottom-50: #09AFA6;
+  --logo-bottom-100: #3BE1D8;
+  --logo-tip: #21D2C8;
+  --logo-inner: #078F88;
+  --logo-accent: #45E8DF;
+  --logo-tail: #086E6A;
 }
 
 @layer base {
@@ -126,6 +156,54 @@
     @apply bg-background text-foreground;
   }
   html {
-    @apply font-sans;
+    @apply font-sans scroll-smooth;
+  }
+
+  ::selection {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :focus-visible {
+      transition: box-shadow 0.2s ease;
+    }
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      to right,
+      #08736f,
+      #08afa7 45%,
+      #25d8ce
+    );
+  }
+  .dark .text-gradient {
+    background-image: linear-gradient(
+      to right,
+      #6ff6ee,
+      #3be1d8 45%,
+      #7afff7
+    );
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, oklch(0 0 0 / 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0 0 0 / 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .dark .bg-grid {
+    background-image:
+      linear-gradient(to right, oklch(1 0 0 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(1 0 0 / 0.05) 1px, transparent 1px);
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent);
+    mask-image: linear-gradient(to bottom, black 55%, transparent);
   }
 }

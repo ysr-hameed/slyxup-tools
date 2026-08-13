@@ -1,19 +1,28 @@
 import Link from "next/link";
+import { Logo } from "@/components/logo";
 
 const columns = [
   {
     title: "Product",
     links: [
-      { label: "Tools", href: "/tools" },
+      { label: "All tools", href: "/tools" },
+      { label: "Blog", href: "/blog" },
       { label: "About", href: "/about" },
       { label: "Contact", href: "/contact" },
     ],
   },
   {
+    title: "Guides",
+    links: [
+      { label: "How much does TikTok pay?", href: "/how-much-does-tiktok-pay" },
+      { label: "Views to make $1,000", href: "/how-many-views-to-make-1000-on-tiktok" },
+    ],
+  },
+  {
     title: "Legal",
     links: [
-      { label: "Privacy", href: "/privacy" },
-      { label: "Terms", href: "/terms" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
     ],
   },
 ];
@@ -21,18 +30,18 @@ const columns = [
 export function Footer() {
   return (
     <footer className="border-t bg-muted/40">
-      <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-4">
-        <div className="md:col-span-2">
-          <p className="text-lg font-medium">Slyxup Tools</p>
-          <p className="mt-2 max-w-sm text-sm text-muted-foreground">
-            Free, fast and privacy-friendly online utilities. Built with Next.js
-            by Slyxup.
+      <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[2fr_1fr_1fr_1fr]">
+        <div>
+          <Logo />
+          <p className="mt-4 max-w-sm text-sm text-muted-foreground">
+            Free, fast and privacy-friendly online utilities. No accounts, no
+            tracking — everything runs right in your browser.
           </p>
         </div>
         {columns.map((col) => (
           <div key={col.title}>
             <p className="text-sm font-medium">{col.title}</p>
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-4 space-y-2.5">
               {col.links.map((link) => (
                 <li key={link.href}>
                   <Link

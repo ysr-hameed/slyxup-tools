@@ -26,28 +26,32 @@ Google ranks tools on **intent + authority + low competition**. These rules drov
 - **Keyword:** "tiktok money calculator" — high comp, already built, long-term goal.
 - **Guide:** `/how-much-does-tiktok-pay`, `/how-many-views-to-make-1000-on-tiktok` ✅
 
-### 2. Instagram Earnings Calculator
+### 2. Instagram Earnings Calculator ✅ DONE
 - **What it does:** Reels bonuses + brand deal rates + affiliate income by follower tier, niche, engagement. Mirrors TikTok calc.
 - **Keyword:** "instagram earnings calculator" / "how much do instagram creators make" — moderate.
 - **Affiliate:** Canva Pro, social mgmt tools.
 - **Feasibility:** ✅ client-side.
+- **Guide:** `/how-much-do-instagram-creators-make` ✅
 
-### 3. YouTube Money Calculator
+### 3. YouTube Money Calculator ✅ DONE
 - **What it does:** CPM/RPM × views → monthly/annual earnings by niche. CPM vs RPM breakdown.
 - **Keyword:** "youtube money calculator" / "how much does youtube pay per view" — moderate.
 - **Affiliate:** YouTube gear, editing software.
 - **Feasibility:** ✅
+- **Guide:** `/how-much-does-youtube-pay-per-1000-views`, `/how-much-does-youtube-pay-for-1-million-views`, `/how-much-ad-revenue-do-youtubers-make` ✅
 
-### 4. YouTube Shorts Calculator
+### 4. YouTube Shorts Calculator ✅ DONE
 - **What it does:** Shorts RPM (per 1k engaged views) → earnings; the 2026 Shorts bonus structure.
 - **Keyword:** "youtube shorts money calculator" / "shorts rpm" — LOW competition, good gap.
 - **Affiliate:** creator tools.
 - **Feasibility:** ✅
+- **Guide:** `/youtube-shorts-rpm-per-1000-views`, `/how-much-do-1-million-shorts-views-pay`, `/how-to-make-money-with-youtube-shorts` ✅
 
-### 5. Twitch Earnings Calculator
+### 5. Twitch Earnings Calculator ✅ DONE
 - **What it does:** Subs (tier 1/2/3 × $4.99/9.99/24.99 × 50% split) + Bits ($0.01 each) + ads (CPM) + donations.
 - **Keyword:** "twitch earnings calculator" / "how much do twitch streamers make" — moderate.
 - **Feasibility:** ✅ (static tiers/splits, all public)
+- **Guide:** `/how-much-do-twitch-streamers-make`, `/how-much-does-twitch-pay-per-sub`, `/how-many-subscribers-to-make-money-on-twitch` ✅
 
 ### 6. Spotify Royalty Calculator
 - **What it does:** Streams × per-stream rate (≈$0.003–0.004) → monthly earnings; vs Apple Music.

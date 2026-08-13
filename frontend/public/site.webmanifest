@@ -1,16 +1,26 @@
 {
-  "name": "Slyxup Tools",
+  "name": "Slyxup Tools — Free Online Tools",
   "short_name": "Slyxup Tools",
-  "description": "Free online tools — fast and privacy-first.",
+  "description": "Free, fast and privacy-friendly online utilities. No sign-ups, no tracking.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#111111",
-  "theme_color": "#111111",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait",
+  "categories": ["utilities", "productivity", "finance"],
   "icons": [
     {
       "src": "/favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
     }
   ]
 }

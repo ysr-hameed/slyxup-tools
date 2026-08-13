@@ -1,18 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#111111"/>
-      <stop offset="1" stop-color="#1a1a1a"/>
+      <stop offset="0" stop-color="#0b0f0f"/>
+      <stop offset="1" stop-color="#101817"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#08736F"/>
+      <stop offset="0.5" stop-color="#08AFA7"/>
+      <stop offset="1" stop-color="#25D8CE"/>
     </linearGradient>
   </defs>
+
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <g transform="translate(70,80)">
-    <g fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="1050" cy="90" r="260" fill="#25D8CE" opacity="0.05"/>
+  <circle cx="180" cy="560" r="300" fill="#08736F" opacity="0.06"/>
+
+  <g transform="translate(90,110) scale(1.6)">
+    <g fill="none" stroke="#25D8CE" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
       <path d="M70 40l-40 25v90L70 180"/>
       <path d="M150 40l40 25v90L150 180"/>
       <path d="M115 130h40"/>
     </g>
   </g>
-  <text x="70" y="420" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="600" fill="#ffffff">Slyxup Tools</text>
-  <text x="70" y="490" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#aaaaaa">Free online tools — fast &amp; privacy-first</text>
+
+  <text x="70" y="410" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" fill="#ffffff">Slyxup Tools</text>
+  <text x="72" y="470" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#9aa7a6">Free online tools — fast &amp; privacy-first</text>
+  <rect x="72" y="505" width="290" height="2" fill="url(#teal)" opacity="0.6"/>
 </svg>
