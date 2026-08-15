@@ -23,6 +23,8 @@ const routes: RouteConfig[] = [
   { path: "/tools", priority: 0.9, changeFrequency: "weekly" },
   { path: "/blog", priority: 0.8, changeFrequency: "weekly" },
   { path: "/tiktok-money-calculator", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/tiktok-shop-fee-calculator", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/whatnot-fee-calculator", priority: 0.9, changeFrequency: "monthly" },
   { path: "/instagram-earnings-calculator", priority: 0.9, changeFrequency: "monthly" },
   { path: "/youtube-money-calculator", priority: 0.9, changeFrequency: "monthly" },
   { path: "/youtube-shorts-calculator", priority: 0.9, changeFrequency: "monthly" },

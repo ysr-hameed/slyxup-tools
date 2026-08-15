@@ -96,10 +96,10 @@ Google ranks tools on **intent + authority + low competition**. These rules drov
 
 > Research finding: generic "marketplace fee calculator" is now crowded, BUT individual **low-competition platforms** (TikTok Shop, Mercari, Depop, Whatnot, Walmart) are wide open.
 
-### 13. TikTok Shop Fee Calculator ★ BEST OPPORTUNITY
-- **What it does:** 6% referral + 2.9% + $0.30 processing → net you keep per sale.
-- **Keyword:** "tiktok shop fee calculator" / "tiktok shop fees" — **LOWEST competition** (confirmed in research).
-- **Feasibility:** ✅
+### 13. TikTok Shop Fee Calculator ★ BEST OPPORTUNITY — ✅ DONE
+ - **What it does:** 6% referral + 2.9% + $0.30 processing → net you keep per sale.
+ - **Keyword:** "tiktok shop fee calculator" / "tiktok shop fees" — **LOWEST competition** (confirmed in research).
+ - **Feasibility:** ✅
 
 ### 14. Etsy Fee Calculator
 - **What it does:** $0.20 listing + 6.5% transaction + 3%+$0.25 processing + optional offsite ads → net.
@@ -131,10 +131,10 @@ Google ranks tools on **intent + authority + low competition**. These rules drov
 - **Keyword:** "depop fee calculator" — LOW comp.
 - **Feasibility:** ✅
 
-### 20. Whatnot Fee Calculator
-- **What it does:** 8% commission + 2.9% processing on live sales → net.
-- **Keyword:** "whatnot fee calculator" — **very LOW** comp, growing platform.
-- **Feasibility:** ✅
+### 20. Whatnot Fee Calculator — ✅ DONE
+ - **What it does:** 8% commission + 2.9% processing on live sales → net.
+ - **Keyword:** "whatnot fee calculator" — **very LOW** comp, growing platform.
+ - **Feasibility:** ✅
 
 ### 21. Walmart Marketplace Fee Calculator
 - **What it does:** Referral 6–20% by category → net.

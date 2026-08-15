@@ -11,6 +11,8 @@ import {
   PlaySquare,
   ShieldCheck,
   Sparkles,
+  Store,
+  Gavel,
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -26,6 +28,22 @@ const featured = {
 };
 
 const tools = [
+  {
+    title: "Whatnot Fee Calculator",
+    href: "/whatnot-fee-calculator",
+    description:
+      "See how much you keep per Whatnot live sale after commission and processing.",
+    icon: Gavel,
+    featured: false,
+  },
+  {
+    title: "TikTok Shop Fee Calculator",
+    href: "/tiktok-shop-fee-calculator",
+    description:
+      "See how much you keep per TikTok Shop sale after referral fees and processing.",
+    icon: Store,
+    featured: false,
+  },
   {
     title: "TikTok Money Calculator",
     href: "/tiktok-money-calculator",

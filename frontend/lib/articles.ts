@@ -176,4 +176,64 @@ export const articles: Article[] = [
     readTime: "5 min read",
     href: "/how-many-subscribers-to-make-money-on-twitch",
   },
+  {
+    title: "How Much Are TikTok Shop Fees? (2026 Seller Fee Breakdown)",
+    slug: "how-much-are-tiktok-shop-fees",
+    description:
+      "Real TikTok Shop referral and processing fees for 2026, with examples of how much you keep per sale.",
+    category: "TikTok Shop",
+    datePublished: "2026-08-15",
+    readTime: "5 min read",
+    href: "/how-much-are-tiktok-shop-fees",
+  },
+  {
+    title: "How Much Do You Keep From a TikTok Shop Sale? (2026)",
+    slug: "how-much-do-you-keep-from-a-tiktok-shop-sale",
+    description:
+      "Net you keep per TikTok Shop sale after referral and processing fees, with examples by price point.",
+    category: "TikTok Shop",
+    datePublished: "2026-08-15",
+    readTime: "5 min read",
+    href: "/how-much-do-you-keep-from-a-tiktok-shop-sale",
+  },
+  {
+    title: "Is TikTok Shop Worth It? Fees vs. Profit in 2026",
+    slug: "is-tiktok-shop-worth-it",
+    description:
+      "Whether TikTok Shop is worth it in 2026, based on real fee math, margin, and which products keep sellers profitable.",
+    category: "TikTok Shop",
+    datePublished: "2026-08-15",
+    readTime: "6 min read",
+    href: "/is-tiktok-shop-worth-it",
+  },
+  {
+    title: "How Much Are Whatnot Fees? (2026 Seller Fee Breakdown)",
+    slug: "how-much-are-whatnot-fees",
+    description:
+      "Real Whatnot seller commission and processing fees for 2026, with examples of how much you keep per live sale.",
+    category: "Whatnot",
+    datePublished: "2026-08-15",
+    readTime: "5 min read",
+    href: "/how-much-are-whatnot-fees",
+  },
+  {
+    title: "How Much Do You Keep From a Whatnot Sale? (2026)",
+    slug: "how-much-do-you-keep-from-a-whatnot-sale",
+    description:
+      "Net you keep per Whatnot live sale after seller commission and processing, with examples by price point.",
+    category: "Whatnot",
+    datePublished: "2026-08-15",
+    readTime: "5 min read",
+    href: "/how-much-do-you-keep-from-a-whatnot-sale",
+  },
+  {
+    title: "Is Whatnot Worth It? Fees vs. Profit for Sellers (2026)",
+    slug: "is-whatnot-worth-it",
+    description:
+      "Whether Whatnot is worth it for sellers in 2026, based on real fee math, margin, and which live formats keep sellers profitable.",
+    category: "Whatnot",
+    datePublished: "2026-08-15",
+    readTime: "6 min read",
+    href: "/is-whatnot-worth-it",
+  },
 ];

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Calculator, Camera, PlaySquare, Clapperboard, Gamepad2 } from "lucide-react";
+import { ArrowRight, Calculator, Camera, PlaySquare, Clapperboard, Gamepad2, Store, Gavel } from "lucide-react";
 import { articles } from "@/lib/articles";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,20 @@ export const metadata: Metadata = {
 };
 
 const availableTools = [
+  {
+    title: "Whatnot Fee Calculator",
+    href: "/whatnot-fee-calculator",
+    description:
+      "See how much you keep per Whatnot live sale after the seller commission and 2.9% processing.",
+    icon: Gavel,
+  },
+  {
+    title: "TikTok Shop Fee Calculator",
+    href: "/tiktok-shop-fee-calculator",
+    description:
+      "See exactly how much you keep per TikTok Shop sale after the referral fee and 2.9% + $0.30 processing, by category.",
+    icon: Store,
+  },
   {
     title: "TikTok Money Calculator",
     href: "/tiktok-money-calculator",
