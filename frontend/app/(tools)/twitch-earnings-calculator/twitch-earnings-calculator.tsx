@@ -93,6 +93,19 @@ export function TwitchEarningsCalculator() {
   const totalLow = subRevenue + bitRevenue + adLow + donations;
   const totalHigh = subRevenue + bitRevenue + adHigh + donations;
 
+  const reset = () => {
+    setTier1Subs(50);
+    setTier2Subs(5);
+    setTier3Subs(2);
+    setPrimeSubs(20);
+    setGiftedSubs(10);
+    setBitsPerMonth(50000);
+    setAvgViewers(100);
+    setAdsHours(60);
+    setDonations(300);
+    setNiche("gaming");
+  };
+
   return (
     <Card className="mx-auto w-full max-w-3xl">
       <CardHeader>
@@ -240,9 +253,18 @@ export function TwitchEarningsCalculator() {
         <Separator />
 
         <div className="rounded-lg border bg-muted/40 p-5">
-          <p className="text-sm font-medium text-muted-foreground">
-            Estimated monthly earnings
-          </p>
+          <div className="flex items-center justify-between gap-4">
+            <p className="text-sm font-medium text-muted-foreground">
+              Estimated monthly earnings
+            </p>
+            <button
+              type="button"
+              onClick={reset}
+              className="rounded-md border px-2.5 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              Reset
+            </button>
+          </div>
           <div className="mt-4 grid gap-6 sm:grid-cols-2">
             <div>
               <p className="text-sm text-muted-foreground">Subscriptions</p>

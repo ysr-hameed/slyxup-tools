@@ -286,17 +286,25 @@ export default function YouTubeMoneyCalculatorPage() {
               variant="outline"
               size="sm"
               nativeButton={false}
-              render={<Link href="/tiktok-money-calculator/" />}
+              render={<Link href="/how-much-does-youtube-pay-per-1000-views/" />}
             >
-              TikTok Money Calculator
+              YouTube pay per 1,000 views
             </Button>
             <Button
               variant="outline"
               size="sm"
               nativeButton={false}
-              render={<Link href="/instagram-earnings-calculator/" />}
+              render={<Link href="/how-much-does-youtube-pay-for-1-million-views/" />}
             >
-              Instagram Earnings Calculator
+              YouTube pay for 1M views
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              nativeButton={false}
+              render={<Link href="/youtube-shorts-calculator/" />}
+            >
+              YouTube Shorts Calculator
             </Button>
             <Button
               variant="outline"

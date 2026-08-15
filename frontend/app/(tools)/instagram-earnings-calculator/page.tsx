@@ -178,10 +178,11 @@ export default function InstagramEarningsCalculatorPage() {
           <div className="mt-4 overflow-x-auto">
             <table className="w-full text-left text-sm">
               <thead>
-                <tr className="border-b text-muted-foreground">
+<tr className="border-b text-muted-foreground">
                   <th className="py-2 pr-4 font-medium">Niche</th>
+                  <th className="py-2 pr-4 font-medium">RPM level</th>
                   <th className="py-2 pr-4 font-medium">Brand deal / post</th>
-                  <th className="py-2 pr-4 font-medium">Best income source</th>
+                  <th className="py-2 font-medium">Best income source</th>
                 </tr>
               </thead>
               <tbody>
@@ -292,17 +293,25 @@ export default function InstagramEarningsCalculatorPage() {
               variant="outline"
               size="sm"
               nativeButton={false}
-              render={<Link href="/tiktok-money-calculator/" />}
+              render={<Link href="/how-much-do-instagram-creators-make/" />}
             >
-              TikTok Money Calculator
+              How much do Instagram creators make?
             </Button>
             <Button
               variant="outline"
               size="sm"
               nativeButton={false}
-              render={<Link href="/how-much-does-tiktok-pay/" />}
+              render={<Link href="/how-much-does-instagram-pay-per-view/" />}
             >
-              How much does TikTok pay?
+              Instagram Reels pay per view
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              nativeButton={false}
+              render={<Link href="/tiktok-money-calculator/" />}
+            >
+              TikTok Money Calculator
             </Button>
             <Button
               variant="outline"

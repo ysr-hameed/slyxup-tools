@@ -321,6 +321,14 @@ export default function TikTokMoneyCalculatorPage() {
               variant="outline"
               size="sm"
               nativeButton={false}
+              render={<Link href="/how-much-does-tiktok-pay-for-1-million-views/" />}
+            >
+              TikTok pay for 1M views
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              nativeButton={false}
               render={<Link href="/tools" />}
             >
               Browse all tools

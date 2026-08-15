@@ -148,6 +148,25 @@ export function TikTokMoneyCalculator() {
   const totalLow = fundLow + brandLow + liveLow;
   const totalHigh = fundHigh + brandHigh + liveHigh;
 
+  // Per-1,000-views and per-1-million-views (Creator Fund only)
+  const per1KLow = rpmLow / 100;
+  const per1KHigh = rpmHigh / 100;
+  const per1MLow = per1KLow * 1000;
+  const per1MHigh = per1KHigh * 1000;
+
+  const reset = () => {
+    setFollowers(50000);
+    setViewsPerVideo(100000);
+    setVideosPerMonth(8);
+    setEngagement(3);
+    setNiche("finance");
+    setRegion("us");
+    setVideoLength("under1min");
+    setDealsPerMonth(2);
+    setLiveStreams(4);
+    setLiveViewers(300);
+  };
+
   return (
     <Card className="mx-auto w-full max-w-3xl">
       <CardHeader>
@@ -321,8 +340,21 @@ export function TikTokMoneyCalculator() {
         </p>
 
         <div className="rounded-lg border bg-muted/40 p-5">
-          <p className="text-sm font-medium text-muted-foreground">
-            Estimated monthly earnings
+          <div className="flex items-center justify-between gap-4">
+            <p className="text-sm font-medium text-muted-foreground">
+              Estimated monthly earnings
+            </p>
+            <button
+              type="button"
+              onClick={reset}
+              className="rounded-md border px-2.5 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              Reset
+            </button>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            That&apos;s ≈ {formatUsd(per1MLow)}–{formatUsd(per1MHigh)} per 1
+            million views from the Creator Fund alone.
           </p>
           <div className="mt-4 grid gap-6 sm:grid-cols-2">
             <div>

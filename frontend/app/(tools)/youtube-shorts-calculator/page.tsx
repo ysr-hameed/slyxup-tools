@@ -238,7 +238,7 @@ export default function YouTubeShortsCalculatorPage() {
               </h3>
               <p className="mt-1">
                 YouTube offers bonus incentives for Shorts engagement and
-                milestone milestones, paid on top of the standard ad share.
+                milestones, paid on top of the standard ad share.
               </p>
             </div>
           </div>
@@ -264,17 +264,25 @@ export default function YouTubeShortsCalculatorPage() {
               variant="outline"
               size="sm"
               nativeButton={false}
-              render={<Link href="/youtube-money-calculator/" />}
+              render={<Link href="/youtube-shorts-rpm-per-1000-views/" />}
             >
-              YouTube Money Calculator
+              Shorts RPM per 1,000 views
             </Button>
             <Button
               variant="outline"
               size="sm"
               nativeButton={false}
-              render={<Link href="/tiktok-money-calculator/" />}
+              render={<Link href="/how-much-do-1-million-shorts-views-pay/" />}
             >
-              TikTok Money Calculator
+              Pay for 1M Shorts views
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              nativeButton={false}
+              render={<Link href="/youtube-money-calculator/" />}
+            >
+              YouTube Money Calculator
             </Button>
             <Button
               variant="outline"

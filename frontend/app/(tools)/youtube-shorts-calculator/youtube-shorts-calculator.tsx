@@ -19,18 +19,19 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const NICHE_SHORTS_RPM_CENTS: Record<string, number> = {
-  finance: 0.9,
-  tech: 0.8,
-  education: 0.8,
-  beauty: 0.6,
-  fitness: 0.6,
-  lifestyle: 0.5,
-  food: 0.5,
-  travel: 0.5,
-  entertainment: 0.4,
-  gaming: 0.4,
-  comedy: 0.4,
+// Shorts ad RPM in USD per 1,000 views (US base, before region).
+const NICHE_SHORTS_RPM_USD: Record<string, number> = {
+  finance: 0.08,
+  tech: 0.07,
+  education: 0.06,
+  beauty: 0.05,
+  fitness: 0.05,
+  lifestyle: 0.045,
+  food: 0.045,
+  travel: 0.045,
+  entertainment: 0.04,
+  gaming: 0.04,
+  comedy: 0.04,
 };
 
 const REGION_MULT: Record<string, number> = {
@@ -55,15 +56,23 @@ function formatNumber(value: number): string {
   return new Intl.NumberFormat("en-US").format(Math.round(value));
 }
 
+function formatUsd2(value: number): string {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 2,
+  }).format(value);
+}
+
 export function YouTubeShortsCalculator() {
   const [shortsViews, setShortsViews] = React.useState(500000);
   const [shortsPerMonth, setShortsPerMonth] = React.useState(20);
   const [niche, setNiche] =
-    React.useState<keyof typeof NICHE_SHORTS_RPM_CENTS>("entertainment");
+    React.useState<keyof typeof NICHE_SHORTS_RPM_USD>("entertainment");
   const [region, setRegion] = React.useState<keyof typeof REGION_MULT>("us");
 
   const regionMult = REGION_MULT[region];
-  const nicheRpm = NICHE_SHORTS_RPM_CENTS[niche];
+  const nicheRpm = NICHE_SHORTS_RPM_USD[niche];
   const rpm = nicheRpm * regionMult;
   const rpmLow = rpm * 0.6;
   const rpmHigh = rpm * 1.4;
@@ -78,6 +87,13 @@ export function YouTubeShortsCalculator() {
 
   const totalLow = adRevenueLow + bonusLow;
   const totalHigh = adRevenueHigh + bonusHigh;
+
+  const reset = () => {
+    setShortsViews(500000);
+    setShortsPerMonth(20);
+    setNiche("entertainment");
+    setRegion("us");
+  };
 
   return (
     <Card className="mx-auto w-full max-w-3xl">
@@ -162,11 +178,20 @@ export function YouTubeShortsCalculator() {
         <Separator />
 
         <div className="rounded-lg border bg-muted/40 p-5">
-          <p className="text-sm font-medium text-muted-foreground">
-            Estimated monthly Shorts earnings
-          </p>
+          <div className="flex items-center justify-between gap-4">
+            <p className="text-sm font-medium text-muted-foreground">
+              Estimated monthly Shorts earnings
+            </p>
+            <button
+              type="button"
+              onClick={reset}
+              className="rounded-md border px-2.5 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              Reset
+            </button>
+          </div>
           <p className="mt-2 text-xs text-muted-foreground">
-            Est. RPM: {rpmLow.toFixed(2)}¢ – {rpmHigh.toFixed(2)}¢ per 1,000
+            Est. RPM: {formatUsd2(rpmLow)} – {formatUsd2(rpmHigh)} per 1,000
             views
           </p>
           <div className="mt-4 grid gap-6 sm:grid-cols-3">

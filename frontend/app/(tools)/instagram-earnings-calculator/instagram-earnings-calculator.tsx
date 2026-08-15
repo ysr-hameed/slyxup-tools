@@ -112,6 +112,17 @@ export function InstagramEarningsCalculator() {
   const totalLow = bonusLow + brandLow + affiliateLow;
   const totalHigh = bonusHigh + brandHigh + affiliateHigh;
 
+  const reset = () => {
+    setFollowers(25000);
+    setReelsPerMonth(8);
+    setAvgReelsViews(50000);
+    setPostsPerMonth(12);
+    setAffiliateRevenue(0);
+    setNiche("beauty");
+    setAccountType("creator");
+    setRegion("us");
+  };
+
   return (
     <Card className="mx-auto w-full max-w-3xl">
       <CardHeader>
@@ -250,9 +261,18 @@ export function InstagramEarningsCalculator() {
         </div>
 
         <div className="rounded-lg border bg-muted/40 p-5">
-          <p className="text-sm font-medium text-muted-foreground">
-            Estimated monthly earnings
-          </p>
+          <div className="flex items-center justify-between gap-4">
+            <p className="text-sm font-medium text-muted-foreground">
+              Estimated monthly earnings
+            </p>
+            <button
+              type="button"
+              onClick={reset}
+              className="rounded-md border px-2.5 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              Reset
+            </button>
+          </div>
           <div className="mt-4 grid gap-6 sm:grid-cols-2">
             <div>
               <p className="text-sm text-muted-foreground">Reels bonus</p>

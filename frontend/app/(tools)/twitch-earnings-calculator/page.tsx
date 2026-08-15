@@ -262,9 +262,17 @@ export default function TwitchEarningsCalculatorPage() {
               variant="outline"
               size="sm"
               nativeButton={false}
-              render={<Link href="/tiktok-money-calculator/" />}
+              render={<Link href="/how-much-do-twitch-streamers-make/" />}
             >
-              TikTok Money Calculator
+              How much do Twitch streamers make?
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              nativeButton={false}
+              render={<Link href="/how-much-does-twitch-pay-per-sub/" />}
+            >
+              Twitch pay per sub
             </Button>
             <Button
               variant="outline"

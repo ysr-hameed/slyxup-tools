@@ -19,17 +19,19 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const NICHE_BASE_RPM_CENTS: Record<string, number> = {
-  finance: 6,
-  tech: 5,
-  beauty: 4,
-  fitness: 4,
-  lifestyle: 3,
-  food: 3,
-  travel: 3,
-  education: 4,
+// Long-form ad RPM in USD per 1,000 views (US base, before region/length).
+// Chosen so the US region lands in the ranges shown on the page.
+const NICHE_RPM_USD: Record<string, number> = {
+  finance: 9,
+  tech: 7.5,
+  education: 6,
+  beauty: 5,
+  fitness: 4.5,
+  lifestyle: 3.5,
+  food: 3.5,
+  travel: 3.5,
+  entertainment: 2.5,
   gaming: 2,
-  entertainment: 3,
   comedy: 2,
 };
 
@@ -69,8 +71,8 @@ const REGION_MULT: Record<string, number> = {
 };
 
 const LENGTH_MULT: Record<string, number> = {
-  short: 1,
-  long: 8,
+  short: 0.08,
+  long: 1,
 };
 
 const BONUS_THRESHOLDS: { threshold: number; bonus: number }[] = [
@@ -106,13 +108,13 @@ export function YouTubeMoneyCalculator() {
   const [viewsPerMonth, setViewsPerMonth] = React.useState(500000);
   const [videosPerMonth, setVideosPerMonth] = React.useState(8);
   const [niche, setNiche] =
-    React.useState<keyof typeof NICHE_BASE_RPM_CENTS>("finance");
+    React.useState<keyof typeof NICHE_RPM_USD>("finance");
   const [videoLength, setVideoLength] =
     React.useState<keyof typeof LENGTH_MULT>("long");
   const [region, setRegion] = React.useState<keyof typeof REGION_MULT>("us");
 
   const regionMult = REGION_MULT[region];
-  const nicheRpm = NICHE_BASE_RPM_CENTS[niche];
+  const nicheRpm = NICHE_RPM_USD[niche];
 
   // Ad revenue (CPM/RPM)
   const rpm = nicheRpm * regionMult * LENGTH_MULT[videoLength];
@@ -143,6 +145,19 @@ export function YouTubeMoneyCalculator() {
 
   const totalLow = adRevenueLow + brandLow + membershipLow + superLow;
   const totalHigh = adRevenueHigh + brandHigh + membershipHigh + superHigh;
+
+  // Per-1,000-views and per-1-million-views (ad revenue only)
+  const per1MLow = rpmLow * 1000;
+  const per1MHigh = rpmHigh * 1000;
+
+  const reset = () => {
+    setSubscribers(100000);
+    setViewsPerMonth(500000);
+    setVideosPerMonth(8);
+    setNiche("finance");
+    setVideoLength("long");
+    setRegion("us");
+  };
 
   return (
     <Card className="mx-auto w-full max-w-3xl">
@@ -255,12 +270,21 @@ export function YouTubeMoneyCalculator() {
         <Separator />
 
         <div className="rounded-lg border bg-muted/40 p-5">
-          <p className="text-sm font-medium text-muted-foreground">
-            Estimated monthly earnings
-          </p>
+          <div className="flex items-center justify-between gap-4">
+            <p className="text-sm font-medium text-muted-foreground">
+              Estimated monthly earnings
+            </p>
+            <button
+              type="button"
+              onClick={reset}
+              className="rounded-md border px-2.5 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              Reset
+            </button>
+          </div>
           <p className="mt-2 text-xs text-muted-foreground">
-            Est. RPM: {rpmLow.toFixed(1)}¢ – {rpmHigh.toFixed(1)}¢ per 1,000
-            views
+            Est. RPM: {formatUsd(rpmLow)} – {formatUsd(rpmHigh)} per 1,000
+            views (≈ {formatUsd(per1MLow)}–{formatUsd(per1MHigh)} per 1M views)
           </p>
           <div className="mt-4 grid gap-6 sm:grid-cols-2">
             <div>
@@ -294,7 +318,7 @@ export function YouTubeMoneyCalculator() {
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
             Based on {formatNumber(viewsPerMonth)} monthly views at an estimated
-            RPM of {rpmLow.toFixed(1)}¢ – {rpmHigh.toFixed(1)}¢ in the{" "}
+            RPM of {formatUsd(rpmLow)} – {formatUsd(rpmHigh)} in the{" "}
             {NICHE_LABELS[niche]} niche. These are estimates — real earnings
             vary by audience, watch time, and ad rates. See methodology below.
           </p>
