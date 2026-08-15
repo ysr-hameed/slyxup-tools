@@ -101,11 +101,12 @@ export default function HowMuchDoesYouTubePayPer1000ViewsPage() {
         </header>
 
         <p>
-          The figure that matters on YouTube isn&apos;t views — it&apos;s{" "}
-          <strong className="text-foreground">RPM</strong>: your revenue per
-          1,000 views. Most creators earn{" "}
-          <strong className="text-foreground">$2–$10 RPM</strong>, with
-          high-value niches earning much more.
+          So you hit a thousand views on a video and wondered what you actually
+          made from it. The number that matters isn&apos;t views — it&apos;s{" "}
+          <strong className="text-foreground">RPM</strong>, your revenue per
+          1,000 views. For most creators that lands between{" "}
+          <strong className="text-foreground">$2–$10</strong>, and the niche you
+          pick does a lot of the heavy lifting.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
@@ -136,9 +137,9 @@ export default function HowMuchDoesYouTubePayPer1000ViewsPage() {
         <p>
           <strong className="text-foreground">CPM</strong> is what advertisers
           pay per 1,000 ad impressions. <strong className="text-foreground">RPM</strong> is
-          what you keep per 1,000 views after YouTube takes its ~45% share and
-          when viewers skip ads. That&apos;s why your RPM is always lower than
-          the raw CPM.
+          what you actually keep per 1,000 views after YouTube takes its ~45%
+          share and viewers skip past ads. Here&apos;s the thing: your RPM is
+          always going to sit below that shiny CPM number.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
@@ -150,12 +151,21 @@ export default function HowMuchDoesYouTubePayPer1000ViewsPage() {
           <li>High-value niches like finance, tech, and education</li>
           <li>Long-form videos over 8 minutes (more ad slots)</li>
         </ul>
+        <p>
+          Say you run a personal finance channel and most of your audience is in
+          the US — a $10–$15 RPM isn&apos;t a pipe dream. A gaming channel with
+          a global, younger audience will be lucky to crack $4. Same platform,
+          totally different paychecks.
+        </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Estimate your own earnings
         </h2>
         <p>
-          Use the{" "}
+          The takeaway? Don&apos;t chase views for their own sake. A finance
+          channel pulling 500K views a month at $10 RPM makes more than an
+          entertainment channel doing the same at $3. If you&apos;re picking a
+          niche, that&apos;s the leverage you actually have. Use the{" "}
           <Link
             href="/youtube-money-calculator/"
             className="text-primary underline-offset-4 hover:underline"

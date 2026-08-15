@@ -91,13 +91,16 @@ export default function HowMuchDoTikTokCreatorsMakeWith100KPage() {
         </header>
 
         <p>
-          100K followers is the moment TikTok creators usually start earning
-          real money. Across the Creativity Program, brand deals, and LIVE
-          gifts, a typical 100K creator makes{" "}
+          100K followers is the moment everything on TikTok starts feeling
+          real. The algorithm respects you, brands start sliding into your
+          DMs, and suddenly &ldquo;creator&rdquo; stops being a hobby. Across the
+          Creativity Program, brand deals, and LIVE gifts, a typical 100K
+          creator makes{" "}
           <strong className="text-foreground">
             $1,000–$5,000 per month
           </strong>
-          , with high-value niches earning more.
+          — and if you&apos;re in a high-value niche, you&apos;re at the top of that
+          range looking up.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
@@ -128,44 +131,51 @@ export default function HowMuchDoTikTokCreatorsMakeWith100KPage() {
           Brand deals are the biggest earner
         </h2>
         <p>
-          At 100K followers, brands treat you as an established micro-influencer.
-          The standard rate of{" "}
+          At 100K followers, brands stop treating you like a gamble and start
+          treating you like a micro-influencer with a real audience. The
+          standard rate of{" "}
           <strong className="text-foreground">$10–$20 per 1,000 followers</strong>{" "}
-          works out to $1,000–$2,000 per sponsored post before negotiation.
-          Finance, tech, and beauty niches command the top of that range.
+          works out to $1,000–$2,000 per sponsored post before you even
+          negotiate. A finance or beauty creator? You&apos;re at the top of that
+          range and can usually ask for more.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Views still add up
         </h2>
         <p>
-          If a 100K creator averages 1–3 million views a month, the Creativity
-          Program pays $35–$80 per million views. It&apos;s not life-changing on
-          its own, but it&apos;s a stable base on top of deals and gifts.
+          Don&apos;t write off views entirely. If a 100K creator averages 1–3
+          million views a month, the Creativity Program pays $35–$80 per
+          million views. On its own it&apos;s not life-changing — but it&apos;s a
+          steady base that quietly covers your bills while the deals and gifts
+          do the heavy lifting.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           How to grow past 100K income
         </h2>
         <p>
-          Raise your brand rates, add affiliate income, go live regularly, and
-          build an email list or product. Creators who diversify rarely rely on
-          a single stream.
+          The creators who blow past the $5K mark don&apos;t post harder — they
+          get smarter. Raise your brand rates every few thousand followers, add
+          affiliate income, go live on a schedule, and build an email list or a
+          product. Diversify early and you&apos;ll never rely on a single stream
+          going quiet.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Estimate your own income
         </h2>
         <p>
-          Use the{" "}
+          Your number won&apos;t be my number, and that&apos;s the point. Use the{" "}
           <Link
             href="/tiktok-money-calculator/"
             className="text-primary underline-offset-4 hover:underline"
           >
             TikTok Money Calculator
           </Link>{" "}
-          to model your earnings with your exact views, followers, niche, and
-          region.
+          with your exact views, followers, niche, and region to see where you
+          actually land. Then pick the stream that&apos;s leaving the most money
+          on the table and go after it.
         </p>
 
         <div className="rounded-lg border bg-muted/40 p-4">

@@ -89,10 +89,11 @@ export default function HowMuchDoesYouTubePayFor1MillionViewsPage() {
         </header>
 
         <p>
-          One million views on a long-form video typically earns{" "}
+          One million views. It sounds like a milestone that should print money.
+          The reality: on a long-form video it typically earns{" "}
           <strong className="text-foreground">$2,000–$10,000</strong> in ad
-          revenue. The exact amount depends on your RPM, which varies wildly by
-          niche and audience.
+          revenue. That range is wide for a reason — it all comes down to your
+          RPM, which swings wildly by niche and audience.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
@@ -119,18 +120,21 @@ export default function HowMuchDoesYouTubePayFor1MillionViewsPage() {
           The real money is beyond ads
         </h2>
         <p>
-          A video with 1 million views is a powerful asset. It attracts
-          sponsors, sends people to your affiliate links, and grows your
-          subscriber base — which compounds into future income. A single viral
-          video can lead to $10,000+ in sponsorships long after the views stop
-          climbing.
+          A video with 1 million views is a powerful asset — honestly, more
+          useful than the check it writes. It attracts sponsors, funnels people
+          to your affiliate links, and stacks up subscribers who keep coming
+          back. One viral video can quietly lead to $10,000+ in sponsorship
+          deals long after the view count stops climbing.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Estimate your own earnings
         </h2>
         <p>
-          Use the{" "}
+          Say you&apos;re a tech channel sitting on a $12 RPM — a million views
+          could clear $12,000, before you even count the sponsor who slides in
+          your DMs. The math differs for everyone, which is exactly why you
+          should run your own numbers. Use the{" "}
           <Link
             href="/youtube-money-calculator/"
             className="text-primary underline-offset-4 hover:underline"

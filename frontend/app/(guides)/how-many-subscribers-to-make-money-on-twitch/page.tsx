@@ -89,7 +89,8 @@ export default function HowManySubsToMakeMoneyOnTwitchPage() {
         </header>
 
         <p>
-          You can start earning with just{" "}
+          The number everyone wants to know: how many subs actually pay the bills?
+          Here&apos;s the straight answer. You can start earning with just{" "}
           <strong className="text-foreground">50 followers</strong> — the
           Affiliate threshold. But a real income needs{" "}
           <strong className="text-foreground">200+ active subs</strong> plus Bits,
@@ -101,19 +102,22 @@ export default function HowManySubsToMakeMoneyOnTwitchPage() {
         </h2>
         <p>
           To unlock subscriptions, Bits, and ads you need all of the following in
-          30 days:{" "}
+          the same 30 days:{" "}
           <strong className="text-foreground">50 followers</strong>, 500 total
           minutes streamed, 7 broadcast days, and 3 average concurrent viewers.
+          Miss even one and you don&apos;t qualify — that&apos;s why that 3-viewer average
+          is the one people quietly struggle with.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Subs needed for a living
         </h2>
         <p>
-          At $2.50 per Tier 1 sub, roughly{" "}
+          Here&apos;s the math: at $2.50 per Tier 1 sub, roughly{" "}
           <strong className="text-foreground">200–400 subs</strong> generate
-          $500–$1,000/month from subscriptions alone. Adding Bits, ads, and
-          donations typically pushes total income to $1,000–$2,500 at that size.
+          $500–$1,000/month from subscriptions alone. Add Bits, ads, and donations
+          and you&apos;re typically looking at $1,000–$2,500 total at that size. So 300
+          loyal subs beats 3,000 followers who never show up.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
@@ -121,22 +125,26 @@ export default function HowManySubsToMakeMoneyOnTwitchPage() {
         </h2>
         <p>
           Twitch income tracks your average concurrent viewers more than total
-          followers. A loyal 50-viewer community can out-earn a large channel
-          with inactive followers.
+          followers, and that&apos;s good news. A loyal 50-viewer community can
+          out-earn a large channel full of inactive followers — 50 people who
+          show up every stream will sub and cheer, while a big dormant list pays
+          nothing. Go for regular viewers, not vanity numbers.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Estimate your earnings
         </h2>
         <p>
-          Use the{" "}
+          So what does that mean for you? Stop guessing at milestones and run your
+          own numbers. Use the{" "}
           <Link
             href="/twitch-earnings-calculator/"
             className="text-primary underline-offset-4 hover:underline"
           >
             Twitch Earnings Calculator
           </Link>{" "}
-          to model your sub, Bit, and ad income based on your actual numbers.
+          to model your sub, Bit, and ad income based on your actual viewer
+          counts.
         </p>
 
         <div className="rounded-lg border bg-muted/40 p-4">

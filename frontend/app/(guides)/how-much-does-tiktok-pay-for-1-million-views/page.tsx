@@ -91,10 +91,13 @@ export default function HowMuchDoesTikTokPayFor1MillionViewsPage() {
         </header>
 
         <p>
-          A video hitting{" "}
-          <strong className="text-foreground">1 million views</strong> sounds
-          like it should be a windfall. In reality, TikTok&apos;s ad-revenue
-          programs pay far less per view than most people expect.
+          There&apos;s a moment every creator waits for: that notification that a
+          video just crossed{" "}
+          <strong className="text-foreground">1 million views</strong>. Feels
+          like it should be a windfall, right? In reality, TikTok&apos;s
+          ad-revenue programs pay far less per view than most people expect —
+          and that&apos;s before you factor in who&apos;s watching and how long they
+          stick around.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
@@ -121,44 +124,52 @@ export default function HowMuchDoesTikTokPayFor1MillionViewsPage() {
           Why views pay so little
         </h2>
         <p>
-          TikTok shares a slice of ad revenue, and ad rates (RPM) vary by
-          audience region and engagement. US and UK audiences pay more, while
-          viewers in lower-CPM regions earn far less per view.
+          Here&apos;s the uncomfortable part: TikTok only shares a slice of ad
+          revenue, and ad rates (RPM) swing wildly with audience region and
+          engagement. A million US viewers can earn you near the top of that
+          range; the same million viewers spread across lower-CPM regions
+          barely pay for a coffee. Same views, very different paydays.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           The Creativity Program pays more
         </h2>
         <p>
-          For videos longer than a minute, the Creativity Program (the successor
-          to the Creator Fund) generally offers a higher RPM. Many creators
-          report $0.50–$1.00 per 1,000 qualified views — roughly 2–3× the old
-          Creator Fund rate.
+          For videos longer than a minute, the Creativity Program — the
+          successor to the Creator Fund — generally offers a much higher RPM.
+          Plenty of creators report $0.50–$1.00 per 1,000 qualified views,
+          which works out to roughly 2–3× the old Creator Fund rate. The catch?
+          You have to make content that keeps people watching past that
+          one-minute mark.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Views aren&apos;t the real money
         </h2>
         <p>
-          A creator with 1 million views on one video but a strong brand can
-          earn thousands from a single sponsored post. LIVE gifts and affiliate
-          links also routinely beat ad-revenue payouts. Treat views as reach,
-          not income.
+          The creators earning real money off a million-view video aren&apos;t the
+          ones collecting the ad check. Think about it: a creator with a strong
+          brand can turn that same viral moment into thousands from a single
+          sponsored post, and LIVE gifts plus affiliate links routinely beat
+          ad-revenue payouts too. Treat views as reach, not income — the money
+          lives in what you do with the attention.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Estimate your payout
         </h2>
         <p>
-          Use the{" "}
+          Want to know what your audience is actually worth? Drop your views,
+          followers, and niche into the{" "}
           <Link
             href="/tiktok-money-calculator/"
             className="text-primary underline-offset-4 hover:underline"
           >
             TikTok Money Calculator
           </Link>{" "}
-          to see how your views, followers, and niche translate into real
-          monthly earnings across all income streams.
+          and it&apos;ll translate them into real monthly earnings across every
+          income stream. That&apos;s the number worth planning around, not the
+          million-view milestone.
         </p>
 
         <div className="rounded-lg border bg-muted/40 p-4">

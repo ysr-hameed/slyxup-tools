@@ -89,7 +89,10 @@ export default function YouTubeShortsRpmPage() {
         </header>
 
         <p>
-          YouTube Shorts pay a{" "}
+          You Googled &quot;how much do Shorts pay per 1,000 views&quot; for a
+          reason, and I&apos;ll give it to you straight:{" "}
+          <strong className="text-foreground">not a lot</strong>. YouTube Shorts
+          pay a{" "}
           <strong className="text-foreground">lower RPM than long-form</strong>.
           A typical Shorts RPM is{" "}
           <strong className="text-foreground">$0.05–$0.20 per 1,000 views</strong>{" "}
@@ -102,7 +105,10 @@ export default function YouTubeShortsRpmPage() {
         <p>
           Shorts have fewer ad slots and much shorter watch times, so YouTube
           generates less ad revenue per view. Long-form videos with multiple ad
-          breaks earn 5–10× more per 1,000 views.
+          breaks earn 5–10× more per 1,000 views. That&apos;s the whole story in
+          one sentence: less watch time, fewer ads, smaller check. It&apos;s not
+          a mystery and it&apos;s not a glitch — it&apos;s just how the payout
+          math works.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
@@ -129,16 +135,20 @@ export default function YouTubeShortsRpmPage() {
           Bonuses add to the base
         </h2>
         <p>
-          On top of the ad share, YouTube runs Shorts bonus programs tied to
-          engagement and milestones. These can meaningfully boost your payouts
-          but vary by region and eligibility.
+          Here&apos;s the thing: RPM isn&apos;t the same for every channel. Your
+          niche, audience, and region all move the number. On top of the ad
+          share, YouTube runs Shorts bonus programs tied to engagement and
+          milestones. These can meaningfully boost your payouts but vary by
+          region and eligibility — one month a bonus might double your earnings,
+          the next it&apos;s gone. Treat them as a nice surprise, not a plan.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Estimate your Shorts earnings
         </h2>
         <p>
-          Use the{" "}
+          So what does that mean for you? If Shorts are your main play, don&apos;t
+          bank your rent on the RPM. Use the{" "}
           <Link
             href="/youtube-shorts-calculator/"
             className="text-primary underline-offset-4 hover:underline"
@@ -146,7 +156,14 @@ export default function YouTubeShortsRpmPage() {
             YouTube Shorts Money Calculator
           </Link>{" "}
           to combine Shorts ad revenue and bonuses into a monthly estimate for
-          your niche and region.
+          your niche and region. It&apos;ll give you a sane range you can plan
+          around instead of guessing.
+        </p>
+
+        <p>
+          The short version: Shorts are a reach engine, not a revenue engine.
+          Chase the views, sure — just know the RPM is the small print and the
+          audience you keep is the real return.
         </p>
 
         <div className="rounded-lg border bg-muted/40 p-4">

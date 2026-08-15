@@ -61,12 +61,14 @@ export default function HowManyViewsToMake1000Page() {
         </header>
 
         <p>
-          The most asked question in creator economy forums:{" "}
+          You&apos;ve probably asked this exact question, word for word:{" "}
           <strong className="text-foreground">
             &ldquo;how many views to make $1,000 on TikTok?&rdquo;
           </strong>{" "}
-          The honest answer depends on your RPM — and on whether you rely on
-          views alone.
+          It&apos;s the number that lives rent-free in every creator&apos;s head, right
+          up there with &ldquo;can I quit my day job.&rdquo; Here&apos;s the honest answer: it
+          depends entirely on your RPM — and on whether you&apos;re willing to stop
+          betting on views alone.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
@@ -93,27 +95,31 @@ export default function HowManyViewsToMake1000Page() {
           Views alone are the slow path
         </h2>
         <p>
-          The Creator Fund is widely considered the{" "}
-          <strong className="text-foreground">lowest-paying</strong> way to make
-          money on TikTok. 33 million views for $1,000 is a lot of videos.
-          Creators who hit $1,000 a month almost always combine streams:
+          Look at that top number again: 33 million views. That&apos;s not a good
+          month, that&apos;s a lottery ticket — the Creator Fund is widely considered
+          the <strong className="text-foreground">lowest-paying</strong> way to
+          make money on TikTok. Creators who actually hit $1,000 a month almost
+          never do it on views alone. They stack streams:
         </p>
         <ul className="list-inside list-disc space-y-2">
           <li>
             <strong className="text-foreground">Brand deals</strong> — one or
-            two sponsored posts can beat months of Creator Fund earnings.
+            two sponsored posts can beat months of Creator Fund earnings. True
+            story: a $300 flat rate beats $250 earned from a million views.
           </li>
           <li>
             <strong className="text-foreground">Creativity Program</strong> —
-            longer videos multiply your per-view rate.
+            longer videos multiply your per-view rate. Same audience, far
+            better pay.
           </li>
           <li>
             <strong className="text-foreground">LIVE gifts</strong> — loyal
-            audiences send gifts during live streams.
+            audiences send gifts during live streams, and they add up faster
+            than you&apos;d think.
           </li>
           <li>
             <strong className="text-foreground">TikTok Shop</strong> — product
-            commissions on top of views.
+            commissions pile up on top of whatever views do.
           </li>
         </ul>
 
@@ -121,24 +127,28 @@ export default function HowManyViewsToMake1000Page() {
           Realistic path to $1,000/month
         </h2>
         <p>
-          A mid-size creator with ~200K followers and a few brand deals can
-          reach $1,000 a month without going viral. A nano creator can hit it
-          by landing consistent $150–$250 sponsored posts plus LIVE gifts.
+          Here&apos;s what the math looks like in real life. A mid-size creator
+          with ~200K followers and a few brand deals can clear $1,000 a month
+          without ever going viral. A nano creator can get there too — say
+          you&apos;re a fitness coach with 20K followers, landing one $150–$250
+          sponsored post a week plus LIVE gifts. Steady beats viral, every time.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Calculate your own target
         </h2>
         <p>
-          Enter your views, followers, niche, and region in the{" "}
+          Enough guessing — plug in your views, followers, niche, and region in
+          the{" "}
           <Link
             href="/tiktok-money-calculator/"
             className="text-primary underline-offset-4 hover:underline"
           >
             TikTok Money Calculator
           </Link>{" "}
-          to see how many months (or videos) it would take to hit $1,000 with
-          your current stats.
+          and it&apos;ll show you how many months (or videos) it&apos;d take to hit
+          $1,000 with your current stats. Then you can stop wondering and start
+          working the plan.
         </p>
 
         <div className="rounded-lg border bg-muted/40 p-4">

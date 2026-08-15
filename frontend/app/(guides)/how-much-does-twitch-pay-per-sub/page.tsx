@@ -89,10 +89,10 @@ export default function HowMuchDoesTwitchPayPerSubPage() {
         </header>
 
         <p>
-          Under Twitch&apos;s standard{" "}
-          <strong className="text-foreground">50/50 split</strong>, a streamer
-          keeps half of each subscription. Here&apos;s what that means for every
-          tier.
+          So a viewer just paid $4.99 for a Tier 1 sub. How much of that lands in
+          your pocket? Under Twitch&apos;s standard{" "}
+          <strong className="text-foreground">50/50 split</strong>, you keep half.
+          Here&apos;s exactly what that shakes out to for every tier.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
@@ -102,15 +102,19 @@ export default function HowMuchDoesTwitchPayPerSubPage() {
           <ul className="list-inside list-disc space-y-1 text-sm">
             <li>
               <strong className="text-foreground">Tier 1 ($4.99):</strong> $2.50
+              to you
             </li>
             <li>
               <strong className="text-foreground">Tier 2 ($9.99):</strong> $5.00
+              to you
             </li>
             <li>
               <strong className="text-foreground">Tier 3 ($24.99):</strong> $12.50
+              to you
             </li>
             <li>
               <strong className="text-foreground">Prime sub:</strong> ~$2.50
+              to you
             </li>
           </ul>
         </div>
@@ -119,31 +123,36 @@ export default function HowMuchDoesTwitchPayPerSubPage() {
           Gifted subs pay the same
         </h2>
         <p>
-          Whether a viewer subscribes or gifts a sub to someone else, the
-          streamer earns the same per-tier payout. Gift sub trains can be a major
-          income source during events.
+          Whether a viewer subscribes themselves or gifts a sub to someone in
+          chat, you earn the same per-tier payout. This is why a big sub train
+          during a special stream can suddenly feel like a payday — 100 gifted
+          Tier 1s is roughly $250, all at once.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Top partners earn more
         </h2>
         <p>
-          High-performing partners can negotiate better splits (down to a 30%
-          Twitch cut), significantly raising per-sub earnings.
+          Real talk: the 50/50 split isn&apos;t forever. High-performing partners can
+          negotiate down to a 30% Twitch cut, which bumps each Tier 1 sub from
+          $2.50 to closer to $3.50. It&apos;s a nice raise — but you usually need the
+          viewer numbers to earn that leverage first.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Estimate your sub income
         </h2>
         <p>
-          Use the{" "}
+          The short version: every sub tier is half to you, and gifted subs count
+          the same. Want your actual monthly number? Feed your tier counts into
+          the{" "}
           <Link
             href="/twitch-earnings-calculator/"
             className="text-primary underline-offset-4 hover:underline"
           >
             Twitch Earnings Calculator
           </Link>{" "}
-          to estimate your monthly subscription revenue across all tiers.
+          and see exactly what your subs are worth before Twitch&apos;s cut.
         </p>
 
         <div className="rounded-lg border bg-muted/40 p-4">

@@ -96,8 +96,10 @@ export default function HowMuchAdRevenueDoYouTubersMakePage() {
         </header>
 
         <p>
-          YouTube ad revenue scales with views and RPM, not subscribers. Here
-          are typical monthly ad-only figures for channels of different sizes.
+          People always ask this about YouTubers, and the honest answer is
+          messier than a subscriber count. YouTube ad revenue scales with views
+          and RPM, not with how many subs you&apos;ve got. Here&apos;s a rough
+          look at typical monthly ad-only earnings by channel size.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
@@ -122,8 +124,9 @@ export default function HowMuchAdRevenueDoYouTubersMakePage() {
           </table>
         </div>
         <p className="text-sm">
-          These are ad-only figures. Total income is usually higher once
-          sponsorships, memberships, and affiliate links are added.
+          These are ad-only figures. Real talk: total income is usually a lot
+          higher once sponsorships, memberships, and affiliate links get added
+          on top.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
@@ -132,24 +135,28 @@ export default function HowMuchAdRevenueDoYouTubersMakePage() {
         <p>
           YouTube keeps roughly{" "}
           <strong className="text-foreground">45% of ad revenue</strong> and pays
-          creators the remaining ~55%. Your RPM already reflects this, so
-          it&apos;s the number to watch.
+          creators the remaining ~55%. Your RPM already reflects that split, so
+          it&apos;s the one number worth keeping an eye on — forget the headline
+          CPMs.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Ads vs. sponsorships
         </h2>
         <p>
-          For established channels, a single sponsored video usually pays more
-          than a month of ad revenue. Smart creators treat ads as a baseline and
-          layer sponsorships, memberships, and affiliate income on top.
+          For established channels, a single sponsored video usually out-earns
+          a whole month of ads. Think of a 100K-sub channel doing a $2,000–$3,000
+          brand deal — that alone can beat weeks of ad payouts. Smart creators
+          treat ads as the baseline and stack sponsorships, memberships, and
+          affiliate income right on top.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Estimate your ad revenue
         </h2>
         <p>
-          Use the{" "}
+          If you want a real number for your own channel, don&apos;t guess. Use
+          the{" "}
           <Link
             href="/youtube-money-calculator/"
             className="text-primary underline-offset-4 hover:underline"

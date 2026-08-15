@@ -89,7 +89,8 @@ export default function HowMuchDo1MillionShortsViewsPayPage() {
         </header>
 
         <p>
-          1 million Shorts views typically earns{" "}
+          A million views sounds like a lottery win until you check your
+          analytics. Real talk: 1 million Shorts views typically earns{" "}
           <strong className="text-foreground">$50–$200</strong> in ad revenue —
           a fraction of what the same views earn on long-form video, though
           bonuses can add more.
@@ -116,17 +117,21 @@ export default function HowMuchDo1MillionShortsViewsPayPage() {
           Shorts are a growth engine
         </h2>
         <p>
-          The real value of 1 million Shorts views is the audience it builds.
-          Those viewers can be funneled to your long-form videos, where ad rates
-          are 5–10× higher, and to sponsor deals that pay far more than the
-          Shorts payout itself.
+          Here&apos;s the real value of 1 million Shorts views: the audience it
+          builds. The payout is almost beside the point. Those viewers can be
+          funneled to your long-form videos, where ad rates are 5–10× higher,
+          and to sponsor deals that pay far more than the Shorts payout itself.
+          One viral Short that hands you a few thousand subscribers can quietly
+          pay for itself many times over downstream.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Estimate your Shorts earnings
         </h2>
         <p>
-          Use the{" "}
+          So what does that mean for you? Don&apos;t obsess over the exact
+          dollar figure — it changes with your niche, region, and the bonuses
+          YouTube happens to be running. Use the{" "}
           <Link
             href="/youtube-shorts-calculator/"
             className="text-primary underline-offset-4 hover:underline"
@@ -134,6 +139,15 @@ export default function HowMuchDo1MillionShortsViewsPayPage() {
             YouTube Shorts Money Calculator
           </Link>{" "}
           to see what your Shorts views, niche, and region could earn each month.
+          Plug in your real numbers and you&apos;ll get a range that actually
+          reflects your channel, not someone else&apos;s.
+        </p>
+
+        <p>
+          Bottom line: $50 to $200 for a million Shorts views is modest, full
+          stop. But a million views is also a stage. Use it to grow, convert,
+          and build the long-form and sponsor income that&apos;s actually worth
+          chasing.
         </p>
 
         <div className="rounded-lg border bg-muted/40 p-4">

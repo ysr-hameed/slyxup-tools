@@ -99,11 +99,13 @@ export default function HowManyFollowersToMakeMoneyOnInstagramPage() {
         </header>
 
         <p>
-          The short answer: you can start earning with{" "}
+          &quot;Do I need 10K followers before I can earn anything?&quot; — that&apos;s
+          the myth worth busting. You can start making money with{" "}
           <strong className="text-foreground">around 1,000 engaged followers</strong>{" "}
-          through affiliate links, but{" "}
-          <strong className="text-foreground">10K followers</strong> is the
-          milestone where brand deals become regular.
+          through affiliate links. But if you want the{" "}
+          <strong className="text-foreground">10K mark</strong>, that&apos;s the
+          milestone where brand deals stop being rare and start becoming a
+          regular thing.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
@@ -134,43 +136,51 @@ export default function HowManyFollowersToMakeMoneyOnInstagramPage() {
           Affiliate income starts small
         </h2>
         <p>
-          With even a few thousand followers, you can share discount codes and
-          affiliate links. It won&apos;t replace a salary, but it&apos;s the
-          earliest income source available and compounds as you grow.
+          Even a few thousand followers is enough to start sharing discount codes
+          and affiliate links. It won&apos;t replace a paycheck — maybe lunch
+          money at first. But it&apos;s the earliest income source there is, and
+          it compounds. Every engaged follower you add makes that next post worth
+          a little more.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           10K unlocks brand deals
         </h2>
         <p>
-          Most brands and agencies set a{" "}
-          <strong className="text-foreground">10K follower minimum</strong> for
-          paid sponsorships. At this tier you can charge $50–$250 per post, more
-          in high-value niches. Engagement matters as much as the number.
+          Most brands and agencies draw the line at a{" "}
+          <strong className="text-foreground">10K follower minimum</strong>{" "}
+          before they&apos;ll pay for a sponsored post. At that tier you can
+          charge $50–$250 per post, and more in high-value niches like finance or
+          beauty. Here&apos;s the catch that trips people up: engagement matters
+          as much as the number. A tight 10K audience that actually replies beats
+          a hollow 50K that doesn&apos;t.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Reels bonuses are separate
         </h2>
         <p>
-          Instagram&apos;s Reels Play bonus is invite-only and not tied to a
-          follower threshold — it&apos;s based on qualified video plays. Treat it
-          as a bonus, not a goal to build your page around.
+          Instagram&apos;s Reels Play bonus doesn&apos;t care about your follower
+          count — it&apos;s invite-only and pays out on qualified video plays,
+          not follower milestones. So don&apos;t chase it. Treat it as a pleasant
+          surprise when it shows up, not the thing you build your page around.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Estimate your earnings
         </h2>
         <p>
-          Use the{" "}
+          Curious what your actual follower count, niche, and posting schedule
+          would pull in? Run the{" "}
           <Link
             href="/instagram-earnings-calculator/"
             className="text-primary underline-offset-4 hover:underline"
           >
             Instagram Earnings Calculator
           </Link>{" "}
-          to see what your follower count, niche, and posting frequency could
-          earn across brand deals, Reels bonuses, and affiliate income.
+          and it&apos;ll break down what you could earn across brand deals, Reels
+          bonuses, and affiliate income. You might be closer to your first
+          hundred bucks than you think.
         </p>
 
         <div className="rounded-lg border bg-muted/40 p-4">

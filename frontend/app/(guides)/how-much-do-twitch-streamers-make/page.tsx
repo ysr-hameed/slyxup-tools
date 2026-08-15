@@ -96,15 +96,22 @@ export default function HowMuchDoTwitchStreamersMakePage() {
         </header>
 
         <p>
-          Most Twitch streamers earn{" "}
-          <strong className="text-foreground">$50–$500 per month</strong>. Income
-          comes from subscriptions, Bits, ads, and donations, and scales sharply
-          with viewer count.
+          You&apos;ve probably typed this into Google because a friend mentioned
+          &quot;making bank on Twitch&quot; and you want the real number. Here&apos;s the
+          honest one: most streamers earn{" "}
+          <strong className="text-foreground">$50–$500 per month</strong>. The
+          money comes from subscriptions, Bits, ads, and donations — and it
+          climbs hard once your viewer count takes off.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Income by streamer size
         </h2>
+        <p>
+          These aren&apos;t exact quotes — they&apos;re a rough map of what most
+          channels actually bring in. Treat them as the shape of the range, not a
+          promise.
+        </p>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
@@ -128,34 +135,40 @@ export default function HowMuchDoTwitchStreamersMakePage() {
           The 50/50 sub split
         </h2>
         <p>
-          A streamer earns about{" "}
+          Here&apos;s the math that matters most. A streamer keeps about{" "}
           <strong className="text-foreground">$2.50 for a $4.99 Tier 1 sub</strong>,{" "}
-          $5 for Tier 2, and $12.50 for Tier 3. Twitch keeps the other half,
-          though top partners can negotiate better rates.
+          $5 for Tier 2, and $12.50 for Tier 3. Twitch takes the other half. Run
+          the numbers: 100 viewers subbing at Tier 1 is around $250 a month just
+          from that one bucket. Big partners can negotiate a better rate, but for
+          everyone starting out, it&apos;s half, plain and simple.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Bits, ads, and donations
         </h2>
         <p>
-          Bits pay <strong className="text-foreground">$0.01 each</strong> — 1,000
-          Bits is $10. Ads pay a per-thousand rate based on viewership. Donations
-          go straight to the streamer but are unpredictable.
+          Bits are the simplest to track: they pay{" "}
+          <strong className="text-foreground">$0.01 each</strong>, so 1,000 Bits
+          is $10 and 10,000 is $100. Ads pay per thousand views, which means they
+          only really add up once you&apos;ve got a steady crowd. Donations go straight
+          to you and feel amazing when they land — but they&apos;re the most
+          unpredictable part of the whole mix.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Estimate your earnings
         </h2>
         <p>
-          Use the{" "}
+          Here&apos;s the takeaway: don&apos;t guess your income, add it up. Plug your real
+          subs, Bits, ads, and donations into the{" "}
           <Link
             href="/twitch-earnings-calculator/"
             className="text-primary underline-offset-4 hover:underline"
           >
             Twitch Earnings Calculator
           </Link>{" "}
-          to combine subs, Bits, ads, and donations into a personalized monthly
-          estimate.
+          and you&apos;ll get a personalized monthly number you can actually plan around
+          — instead of the fantasy number your feed keeps pushing.
         </p>
 
         <div className="rounded-lg border bg-muted/40 p-4">

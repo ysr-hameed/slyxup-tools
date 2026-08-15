@@ -97,21 +97,23 @@ export default function HowMuchDoInstagramCreatorsMakePage() {
         </header>
 
         <p>
-          Instagram creators earn money in three main ways:{" "}
+          &quot;How much do Instagram creators actually make?&quot; is the question
+          behind every &quot;this is my side hustle&quot; bio. There&apos;s no one
+          answer, but there are three main ways it happens:{" "}
           <strong className="text-foreground">Reels bonuses</strong>,{" "}
           <strong className="text-foreground">brand deals</strong>, and{" "}
-          <strong className="text-foreground">affiliate income</strong>. For
-          most creators, brand deals and affiliate marketing are the real
-          moneymakers — not the Reels bonus.
+          <strong className="text-foreground">affiliate income</strong>. For the
+          vast majority of creators, brand deals and affiliate marketing are the
+          real moneymakers — the Reels bonus is the smallest piece of the pie.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Income by follower count
         </h2>
         <p>
-          These are typical monthly ranges based on reported creator averages.
-          Your actual numbers depend heavily on niche, engagement, and audience
-          region.
+          Here are typical monthly ranges based on reported creator averages.
+          Treat them as a starting point, not a promise — your real numbers swing
+          hard based on niche, engagement, and where your audience lives.
         </p>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
@@ -138,48 +140,53 @@ export default function HowMuchDoInstagramCreatorsMakePage() {
           The Reels bonus is small
         </h2>
         <p>
-          Instagram&apos;s Reels Play bonus is invite-only and pays a small
-          amount per qualified view. It&apos;s a nice extra, but it&apos;s not a
-          reliable income source. A viral Reel can pay far less than a single
-          sponsored post from a brand.
+          Let&apos;s be honest about the Reels Play bonus: it&apos;s invite-only
+          and pays a small amount per qualified view. Nice when it lands, but it
+          isn&apos;t something you can plan a budget around. A Reel that goes
+          viral can still pay less than a single sponsored post from a brand —
+          which tells you where the real value sits.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Brand deals are where the money is
         </h2>
         <p>
-          A common rule of thumb is <strong className="text-foreground">
+          The rule of thumb that runs through this whole space is{" "}
+          <strong className="text-foreground">
             $10–$20 per 1,000 followers
           </strong>{" "}
-          for a sponsored post. So a 50K-account might charge $500–$1,000, while
-          a 500K account can charge $5,000–$10,000. Finance, fashion, beauty,
-          and tech niches command the highest rates.
+          for a sponsored post. So a beauty creator at 50K can charge
+          $500–$1,000 a post, while a 500K account can ask $5,000–$10,000.
+          Finance, fashion, beauty, and tech niches consistently land the top
+          rates because their audiences buy things.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Affiliate income adds up
         </h2>
         <p>
-          Creators share discount codes and affiliate links, earning a commission
-          on sales they drive. In high-intent niches this can rival or exceed
-          brand deals. It also compounds — the bigger and more engaged your
-          audience, the more you earn per post.
+          Beyond sponsorships, creators share discount codes and affiliate links,
+          earning a commission on the sales they drive. In high-intent niches
+          that recurring cut can rival — sometimes beat — brand deals. And it
+          compounds: the bigger and more engaged your audience, the more every
+          single post earns.
         </p>
 
         <h2 className="font-heading text-2xl font-medium text-foreground">
           Estimate your income
         </h2>
         <p>
-          Use the{" "}
+          Want a number you can actually use? Run the{" "}
           <Link
             href="/instagram-earnings-calculator/"
             className="text-primary underline-offset-4 hover:underline"
           >
             Instagram Earnings Calculator
           </Link>{" "}
-          to combine Reels bonuses, brand deals, and affiliate income into a
-          personalized monthly estimate based on your niche, region, and posting
-          frequency.
+          and it&apos;ll combine Reels bonuses, brand deals, and affiliate income
+          into a personalized monthly estimate based on your niche, region, and
+          posting frequency. It&apos;s the fastest way to see where you&apos;d
+          land right now — and what to push to move it up.
         </p>
 
         <div className="rounded-lg border bg-muted/40 p-4">
