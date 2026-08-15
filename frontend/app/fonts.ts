@@ -1,24 +1,31 @@
 import {
-  Geist_Mono,
-  Poppins,
-  Space_Grotesk,
+  DM_Sans,
+  JetBrains_Mono,
+  Lora,
+  Outfit,
 } from "next/font/google";
 
-export const poppins = Poppins({
+export const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-sans",
   display: "swap",
 });
 
-export const geistMono = Geist_Mono({
+export const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-mono",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-display",
   display: "swap",
 });
 
-export const spaceGrotesk = Space_Grotesk({
+export const lora = Lora({
   subsets: ["latin"],
-  variable: "--font-serif",
+  variable: "--font-body",
+  display: "swap",
+});
+
+export const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: "swap",
 });

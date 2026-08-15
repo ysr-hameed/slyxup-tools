@@ -36,6 +36,18 @@ const NICHE_ADS_CPM: Record<string, number> = {
   variety: 3,
 };
 
+const NICHE_LABELS: Record<string, string> = {
+  gaming: "Gaming",
+  esports: "Esports",
+  sports: "Sports",
+  justchatting: "Just Chatting",
+  irl: "IRL",
+  variety: "Variety",
+  music: "Music",
+  creative: "Creative",
+  music_performance: "Music Performance",
+};
+
 function formatUsd(value: number): string {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -77,9 +89,9 @@ export function TwitchEarningsCalculator() {
   const adRevenue = (adImpressions / 1000) * NICHE_ADS_CPM[niche];
   const adLow = adRevenue * 0.6;
   const adHigh = adRevenue * 1.4;
-  const adMid = (adLow + adHigh) / 2;
 
-  const total = subRevenue + bitRevenue + adMid + donations;
+  const totalLow = subRevenue + bitRevenue + adLow + donations;
+  const totalHigh = subRevenue + bitRevenue + adHigh + donations;
 
   return (
     <Card className="mx-auto w-full max-w-3xl">
@@ -254,9 +266,15 @@ export function TwitchEarningsCalculator() {
               </p>
             </div>
             <div>
+              <p className="text-sm text-muted-foreground">Donations</p>
+              <p className="mt-1 font-mono text-xl font-semibold">
+                {formatUsd(donations)}
+              </p>
+            </div>
+            <div className="sm:col-span-2">
               <p className="text-sm text-muted-foreground">Total</p>
               <p className="mt-1 font-mono text-2xl font-semibold">
-                {formatUsd(total)}
+                {formatUsd(totalLow)} – {formatUsd(totalHigh)}
               </p>
               <p className="text-xs text-muted-foreground">
                 subs + bits + ads + donations
@@ -264,9 +282,9 @@ export function TwitchEarningsCalculator() {
             </div>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
-            Based on a 50/50 sub split, $0.01 per Bit, and an estimated
-            {NICHE_ADS_CPM[niche]} CPM in the {niche} category. These are
-            estimates — real earnings vary. See methodology below.
+            Based on a 50/50 sub split, $0.01 per Bit, and an estimated $
+            {NICHE_ADS_CPM[niche]} CPM in the {NICHE_LABELS[niche]} category.
+            These are estimates — real earnings vary. See methodology below.
           </p>
         </div>
       </CardContent>

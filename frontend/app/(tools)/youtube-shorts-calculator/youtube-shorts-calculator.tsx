@@ -40,7 +40,8 @@ const REGION_MULT: Record<string, number> = {
   other: 0.6,
 };
 
-const BONUS_RATE = 0.02;
+const BONUS_LOW_PCT = 0.2;
+const BONUS_HIGH_PCT = 0.5;
 
 function formatUsd(value: number): string {
   return new Intl.NumberFormat("en-US", {
@@ -72,8 +73,8 @@ export function YouTubeShortsCalculator() {
   const adRevenueHigh = (monthlyViews / 1000) * rpmHigh;
 
   // Shorts bonus (extra incentive on top of ad share)
-  const bonusLow = monthlyViews * BONUS_RATE * 0.5;
-  const bonusHigh = monthlyViews * BONUS_RATE * 1.5;
+  const bonusLow = adRevenueLow * BONUS_LOW_PCT;
+  const bonusHigh = adRevenueHigh * BONUS_HIGH_PCT;
 
   const totalLow = adRevenueLow + bonusLow;
   const totalHigh = adRevenueHigh + bonusHigh;

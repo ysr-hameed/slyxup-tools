@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { geistMono, poppins, spaceGrotesk } from "@/app/fonts";
+import { dmSans, jetBrainsMono, lora, outfit } from "@/app/fonts";
 import { ThemeProvider } from "@/app/providers";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -123,7 +123,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${poppins.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased`}
+      className={`${dmSans.variable} ${outfit.variable} ${lora.variable} ${jetBrainsMono.variable} antialiased`}
     >
       <head>
         <script
@@ -140,6 +140,7 @@ export default function RootLayout({
         />
       </head>
       <body className="flex min-h-screen flex-col bg-background font-sans text-foreground">
+        <div className="noise" aria-hidden="true" />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

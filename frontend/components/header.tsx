@@ -18,7 +18,7 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 border-b border-foreground/5 bg-background/70 backdrop-blur-xl supports-[backdrop-filter]:bg-background/50">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
         <Logo />
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
@@ -35,7 +35,7 @@ export function Header() {
                 className={cn(
                   "relative rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
                   active &&
-                    "text-foreground after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-primary"
+                    "text-foreground after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-gradient-to-r after:from-coral-500 after:to-coral-600"
                 )}
               >
                 {item.label}
@@ -45,7 +45,7 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-3">
           <Button
-            size="default"
+            size="sm"
             nativeButton={false}
             className="hidden sm:inline-flex"
             render={<Link href="/tools" />}

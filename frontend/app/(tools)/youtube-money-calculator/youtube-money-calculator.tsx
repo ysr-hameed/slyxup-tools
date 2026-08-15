@@ -47,6 +47,20 @@ const NICHE_BRAND_MULT: Record<string, number> = {
   comedy: 1.0,
 };
 
+const NICHE_LABELS: Record<string, string> = {
+  finance: "Finance",
+  tech: "Tech",
+  beauty: "Beauty",
+  fitness: "Fitness",
+  lifestyle: "Lifestyle",
+  food: "Food",
+  travel: "Travel",
+  education: "Education",
+  gaming: "Gaming",
+  entertainment: "Entertainment",
+  comedy: "Comedy",
+};
+
 const REGION_MULT: Record<string, number> = {
   us: 1.3,
   uk: 1.1,
@@ -115,11 +129,11 @@ export function YouTubeMoneyCalculator() {
   const brandHigh = sponsorHigh * Math.max(1, Math.round(videosPerMonth / 4));
 
   // Channel memberships
-  const memberBonus = BONUS_THRESHOLDS.find(
+  const memberPct = BONUS_THRESHOLDS.find(
     (t) => subscribers >= t.threshold
   )?.bonus ?? 0;
-  const membersLow = Math.floor(subscribers * memberBonus * 0.005);
-  const membersHigh = Math.floor(subscribers * memberBonus * 0.02);
+  const membersLow = Math.floor(subscribers * memberPct);
+  const membersHigh = Math.floor(subscribers * memberPct * 2);
   const membershipLow = membersLow * CHANNEL_MEMBERSHIP_RATE;
   const membershipHigh = membersHigh * CHANNEL_MEMBERSHIP_RATE;
 
@@ -280,9 +294,9 @@ export function YouTubeMoneyCalculator() {
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
             Based on {formatNumber(viewsPerMonth)} monthly views at an estimated
-            RPM of {nicheRpm.toFixed(1)}¢ in the {niche} niche. These are
-            estimates — real earnings vary by audience, watch time, and ad
-            rates. See methodology below.
+            RPM of {rpmLow.toFixed(1)}¢ – {rpmHigh.toFixed(1)}¢ in the{" "}
+            {NICHE_LABELS[niche]} niche. These are estimates — real earnings
+            vary by audience, watch time, and ad rates. See methodology below.
           </p>
         </div>
       </CardContent>

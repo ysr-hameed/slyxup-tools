@@ -59,6 +59,32 @@ const LENGTH_MULT: Record<string, number> = {
   oneMinutePlus: 8,
 };
 
+const NICHE_LABELS: Record<string, string> = {
+  finance: "Finance",
+  tech: "Tech / Education",
+  beauty: "Beauty",
+  fitness: "Fitness",
+  lifestyle: "Lifestyle",
+  food: "Food",
+  travel: "Travel",
+  entertainment: "Entertainment",
+  gaming: "Gaming",
+  comedy: "Comedy",
+  pets: "Pets",
+};
+
+const REGION_LABELS: Record<string, string> = {
+  us: "US",
+  uk: "UK",
+  germany: "Germany",
+  other: "Global",
+};
+
+const LENGTH_LABELS: Record<string, string> = {
+  under1min: "<1min",
+  oneMinutePlus: "1min+",
+};
+
 function cpfRange(followers: number): [number, number] {
   if (followers >= 1_000_000) return [0.04, 0.08];
   if (followers >= 250_000) return [0.03, 0.05];
@@ -286,8 +312,8 @@ export function TikTokMoneyCalculator() {
           </div>
         </div>
         <p className="text-xs text-muted-foreground">
-          Estimated Creator Fund RPM for {niche} × {region} ×{" "}
-          {videoLength === "oneMinutePlus" ? "1min+" : "&lt;1min"}:{" "}
+          Estimated Creator Fund RPM for {NICHE_LABELS[niche]} ×{" "}
+          {REGION_LABELS[region]} × {LENGTH_LABELS[videoLength]}:{" "}
           <span className="font-medium">
             {formatCents(rpmLow)} – {formatCents(rpmHigh)} per 1,000 views
           </span>

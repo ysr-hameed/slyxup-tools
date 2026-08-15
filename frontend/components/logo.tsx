@@ -97,7 +97,9 @@ export function Logo({ className, showText = true }: LogoProps) {
         <circle cx="368" cy="91" r="6" fill="#E8FFFD" />
       </svg>
       {showText && (
-        <span className="text-lg tracking-tight">Slyxup Tools</span>
+        <span className="font-heading text-lg font-semibold tracking-tight">
+          Slyxup <span className="text-gradient">Tools</span>
+        </span>
       )}
     </Link>
   );

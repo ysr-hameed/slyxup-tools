@@ -2,9 +2,13 @@ import Link from "next/link";
 import {
   ArrowRight,
   Calculator,
+  Camera,
+  Clapperboard,
   Compass,
+  Gamepad2,
   Lock,
   MousePointerClick,
+  PlaySquare,
   ShieldCheck,
   Sparkles,
   Zap,
@@ -29,6 +33,38 @@ const tools = [
       "Estimate earnings from the Creator Fund, brand deals, and LIVE gifts.",
     icon: Calculator,
     featured: true,
+  },
+  {
+    title: "YouTube Money Calculator",
+    href: "/youtube-money-calculator",
+    description:
+      "Estimate ad revenue, sponsorships, and channel memberships per month.",
+    icon: PlaySquare,
+    featured: false,
+  },
+  {
+    title: "Instagram Earnings Calculator",
+    href: "/instagram-earnings-calculator",
+    description:
+      "Estimate Reels bonuses, brand deals, and affiliate income.",
+    icon: Camera,
+    featured: false,
+  },
+  {
+    title: "Twitch Earnings Calculator",
+    href: "/twitch-earnings-calculator",
+    description:
+      "Estimate monthly income from subs, Bits, ads, and donations.",
+    icon: Gamepad2,
+    featured: false,
+  },
+  {
+    title: "YouTube Shorts Money Calculator",
+    href: "/youtube-shorts-calculator",
+    description:
+      "Estimate Shorts ad revenue and bonus incentives per 1,000 views.",
+    icon: Clapperboard,
+    featured: false,
   },
 ];
 
@@ -84,15 +120,19 @@ export default function Home() {
           aria-hidden
           className="bg-grid mask-fade-b pointer-events-none absolute inset-0"
         />
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-4 pb-16 pt-20 text-center sm:px-6 sm:pt-28">
-          <Badge variant="secondary" className="mb-6">
-            <Sparkles className="mr-1 size-3" />
-            {featured.title} is live
-          </Badge>
-          <h1 className="max-w-3xl font-heading text-4xl font-medium leading-tight tracking-tight text-balance sm:text-6xl">
+        <div
+          aria-hidden
+          className="orb -top-24 left-1/2 h-72 w-72 -translate-x-[80%] bg-coral-500/30 dark:bg-coral-500/20"
+        />
+        <div
+          aria-hidden
+          className="orb top-10 right-0 h-80 w-80 translate-x-1/3 bg-teal-72/25 dark:bg-teal-100/15"
+        />
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-4 pb-16 pt-20 text-center sm:px-6 sm:pt-28">
+          <p className="label mb-6 text-primary">Free · Fast · Private</p>
+          <h1 className="max-w-3xl font-heading text-4xl font-semibold leading-tight tracking-tight text-balance sm:text-6xl">
             Free online tools,{" "}
-            <span className="text-gradient italic">fast</span> and
-            privacy-first.
+            <span className="text-gradient">fast</span> and privacy-first.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
             Slyxup Tools is a growing suite of free utilities — no sign-ups, no
@@ -141,7 +181,7 @@ export default function Home() {
       <div id="tools" className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6">
         <div className="flex items-end justify-between">
           <div>
-            <h2 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
+            <h2 className="font-heading text-2xl font-semibold tracking-tight sm:text-3xl">
               Popular right now
             </h2>
             <p className="mt-2 max-w-md text-sm text-muted-foreground">
@@ -163,19 +203,19 @@ export default function Home() {
             <Link
               key={tool.title}
               href={tool.href}
-              className="group flex flex-col rounded-xl ring-1 ring-foreground/10 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:ring-primary/40 sm:max-w-xs"
+              className="group flex flex-col transition-transform hover:-translate-y-1 sm:max-w-xs"
             >
-              <Card className="flex flex-1 flex-col rounded-xl">
+              <Card className="flex flex-1 flex-col">
                 <CardHeader>
-                  <div className="mb-3 flex size-11 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <div className="mb-3 flex size-11 items-center justify-center rounded-xl bg-gradient-to-br from-coral-500 to-coral-600 text-white shadow-[0_0_24px_-4px_rgba(255,107,107,0.5)] transition-transform group-hover:scale-105">
                     <tool.icon className="size-5" />
                   </div>
                   {tool.featured && (
-                    <Badge variant="outline" className="mb-2 w-fit">
+                    <Badge variant="outline" className="mb-2 w-fit border-primary/30 text-primary">
                       #1 featured
                     </Badge>
                   )}
-                  <CardTitle className="font-heading text-lg font-medium">
+                  <CardTitle className="font-heading text-lg font-semibold">
                     {tool.title}
                   </CardTitle>
                 </CardHeader>
@@ -188,7 +228,7 @@ export default function Home() {
                       {featured.highlights.map((h) => (
                         <li
                           key={h}
-                          className="rounded-full border px-2.5 py-0.5 text-xs text-muted-foreground"
+                          className="rounded-full border border-foreground/10 bg-muted/40 px-2.5 py-0.5 text-xs text-muted-foreground"
                         >
                           {h}
                         </li>
@@ -205,7 +245,7 @@ export default function Home() {
       {/* How it works */}
       <div className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
+          <h2 className="font-heading text-2xl font-semibold tracking-tight sm:text-3xl">
             How it works
           </h2>
           <p className="mt-3 text-muted-foreground">
@@ -238,7 +278,7 @@ export default function Home() {
       <div className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6">
         <div className="rounded-3xl border bg-muted/30 p-8 sm:p-12">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
+            <h2 className="font-heading text-2xl font-semibold tracking-tight sm:text-3xl">
               Why Slyxup Tools
             </h2>
             <p className="mt-3 text-muted-foreground">
@@ -270,8 +310,16 @@ export default function Home() {
             aria-hidden
             className="bg-grid mask-fade-b pointer-events-none absolute inset-0"
           />
+          <div
+            aria-hidden
+            className="orb -left-16 -top-16 h-64 w-64 bg-coral-500/25 dark:bg-coral-500/15"
+          />
+          <div
+            aria-hidden
+            className="orb -bottom-20 -right-16 h-72 w-72 bg-teal-72/20 dark:bg-teal-100/10"
+          />
           <div className="relative mx-auto flex max-w-2xl flex-col items-center">
-            <h2 className="font-heading text-3xl font-medium tracking-tight sm:text-4xl">
+            <h2 className="font-heading text-3xl font-semibold tracking-tight sm:text-4xl">
               Start with the{" "}
               <span className="text-gradient">#1 tool</span>
             </h2>
