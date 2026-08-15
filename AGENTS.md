@@ -31,11 +31,12 @@ Always run **typecheck + lint + build** after any change.
 ## Frontend conventions
 
 - Static export (`output: "export"` in `next.config.ts`). **No SSR, no API routes, no server code in pages.**
-- Fonts: Poppins (body), Geist Mono (mono), Space Grotesk (heading) — see `app/fonts.ts`.
+- Fonts (see `app/fonts.ts` + `app/globals.css`): **Outfit** = `--font-display` (headings), **DM Sans** = `--font-sans` (fallback), **Lora** = `--font-body` (body, ~1.0625rem, line-height 1.7), **JetBrains Mono** = `--font-mono` (labels/eyebrows). Note `--font-serif` and `--font-heading` both map to `--font-display`, so a `font-heading` class = Outfit.
 - Theme toggle via `next-themes` (`components/theme-toggle.tsx`).
 - **shadcn/ui preset `base-nova` uses Base UI** — interactive components use the `render` prop, NOT `asChild` (e.g. `render={<Link href="/x" />}`).
 - Brand logo (teal snake, theme-adaptive via CSS vars) — `components/logo.tsx`.
-- Design helpers in `app/globals.css`: `.text-gradient`, `.bg-grid`, `.mask-fade-b`. Reuse `components/page-header.tsx` for page intros.
+- **Slyxup brand tokens** (in `app/globals.css`): dark surfaces (`#0a0a0a`–`#262626`), **coral** primary (`#ff6b6b`→`#ee5a24`), **teal** logo gradient (`#08736F`→`#7AFFF7`).
+- **Design utilities** (in `app/globals.css`): `.glass`, `.text-gradient`, `.card-border`, `.orb`, `.grid-dots`, `.noise`, and `.label` (mono uppercase eyebrow). Reuse `components/page-header.tsx` for page intros.
 - API base URL from `NEXT_PUBLIC_API_URL` (default `http://localhost:8790`) — see `lib/api.ts`.
 
 ## SEO (apply to EVERY new page)
@@ -64,6 +65,13 @@ Always run **typecheck + lint + build** after any change.
 
 6. Update the home page `app/page.tsx` **featured/`tools`** arrays **only if** you want to surface it there.
 
+> **Calculator quality standards (REQUIRED for every tool):**
+> - **Reset button** in the results header that restores every input to its default.
+> - **Human-readable labels**, never raw IDs. If a niche/region/length is shown in a summary line, display "Finance × US × 1min+" — not `finance × us × under1min`.
+> - Add a **per-1,000-views and/or per-1-million-views** conversion line in the results (strong SEO hook, e.g. "≈ $8,190–$15,210 per 1M views").
+> - Guard inputs with `Math.max(0, Number(e.target.value))` so empty/negative values can't produce `NaN`.
+> - **RPM/budget consistency:** the numbers the calculator produces MUST fall in the ranges your page table / TL;DR / FAQ claim. (e.g. if the page says "Finance RPM $10–$15", the calculator's finance output must land there — double-check units: dollars vs cents). Never ship a calculator whose outputs contradict its own page.
+
 ---
 
 ## How to write a NEW BLOG ARTICLE
@@ -80,6 +88,18 @@ Always run **typecheck + lint + build** after any change.
 > - 1 by-channel-size or income-breakdown article (e.g. "ad revenue by subs", "how many followers to make money")
 >
 > The 3 articles must have genuinely distinct body copy and keywords — never reuse the same paragraphs across them or across tools.
+
+> **Humanized voice (REQUIRED for every article):** Write like a sharp, honest friend who lives the topic — never like a bot.
+> - Open with a **real hook**: the exact query a reader typed into Google, or a concrete scenario. Never "In today's world".
+> - Use **"you" and contractions** (you're, it's, that'll). Vary sentence length (short + punchy mixed with longer).
+> - **Ban AI filler:** "It's important to note", "In conclusion", "Furthermore", "Moreover", "Additionally", "delve", "leverage", "when it comes to", "in today's fast-paced world".
+> - **Show, don't tell:** concrete numbers + small realistic examples ("Say you're a finance channel with 500K views a month...").
+> - Use **spoken transitions** ("Here's the thing:", "Real talk:", "The short version:").
+> - **Close with an opinionated takeaway** before the CTA, not a boilerplate summary.
+> - Keep figures consistent with the page's schema/FAQ and the tool's calculator.
+> - In JSX text, escape quotes with `&ldquo;`/`&rdquo;` (or curly quotes) — never raw `"`, or ESLint `react/no-unescaped-entities` fails.
+
+> **Article/SEO checklist:** factual accuracy (no fake data — label estimates clearly), and every guide links to its related **tool + at least one other guide**; every tool page links to its **own platform's guides** in the "Related" block (not just cross-tool links).
 
 ## Folder structure (frontend/app)
 
